@@ -11,7 +11,7 @@
     -->
     
     <!-- 应用名称：和统一配置中的项目代码保持一致（小写） -->
-    <property name="APP_NAME" value="ms-org-manage"/>
+    <property name="APP_NAME" value="ms-community-government-affairs"/>
     <!--日志文件保留天数-->
     <property name="LOG_MAX_HISTORY" value="30"/>
     <!--应用日志文件保存路径-->
