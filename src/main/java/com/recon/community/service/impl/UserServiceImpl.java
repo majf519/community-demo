@@ -18,6 +18,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * @author daniel.xue
@@ -71,5 +72,12 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
             residents = residentsMapper.selectByPrimaryKey(user.getResidentsId());
         }
         return residents;
+    }
+
+    @Override
+    public List<Residents> listFamily(String id) {
+        Residents residents = residentsMapper.selectByPrimaryKey(id);
+
+        return null;
     }
 }

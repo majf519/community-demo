@@ -5,6 +5,8 @@ import com.recon.community.entity.Residents;
 import com.recon.community.entity.User;
 import com.recon.community.vo.UserVO;
 
+import java.util.List;
+
 
 /**
  * @author daniel.xue
@@ -31,4 +33,12 @@ public interface UserService extends IService<User> {
      * @return
      */
     Residents getUser();
+
+    /**
+     * 获取家庭成员
+     *
+     * @param id
+     * @return
+     */
+    List<Residents> listFamily(String id);
 }

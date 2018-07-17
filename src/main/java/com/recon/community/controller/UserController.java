@@ -14,6 +14,8 @@ import org.springframework.http.MediaType;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 
 /**
  * @author daniel.xue
@@ -46,6 +48,17 @@ public class UserController {
         OptResult result = new OptResult();
         Residents residents = userService.getUser();
         result.setBody(residents);
+        return result;
+    }
+
+    @GetMapping("family")
+    @ApiOperation(value = "获取家庭成员",notes = "获取家庭成员", produces = MediaType.APPLICATION_JSON_VALUE)
+    @ApiImplicitParam(name = "id", value = "居民id", paramType = "path", dataType = "String", required = true)
+    public OptResult listFamily(@PathVariable String id) {
+        logger.info("获取家庭成员 id" + id);
+        OptResult result = new OptResult();
+        List<Residents> residentsList = userService.listFamily(id);
+        result.setBody(residentsList);
         return result;
     }
 
