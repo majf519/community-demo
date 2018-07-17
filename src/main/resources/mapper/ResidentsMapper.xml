@@ -1,64 +1,64 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.recon.community.mapper.ResidentsMapper" >
-  <resultMap id="BaseResultMap" type="com.recon.community.entity.Residents" >
-    <constructor >
-      <idArg column="id" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="name" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="gender" jdbcType="CHAR" javaType="java.lang.String" />
-      <arg column="birthday" jdbcType="DATE" javaType="java.util.Date" />
-      <arg column="household_address" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="domicile_number" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="domicile_address" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="company" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="division_unit" jdbcType="CHAR" javaType="java.lang.String" />
-      <arg column="marriage_status" jdbcType="CHAR" javaType="java.lang.String" />
-      <arg column="marriage_no" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="marriage_date" jdbcType="DATE" javaType="java.util.Date" />
-      <arg column="political_status" jdbcType="CHAR" javaType="java.lang.String" />
-      <arg column="is_foreign" jdbcType="CHAR" javaType="java.lang.String" />
-      <arg column="id_card" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="contact_phone" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="native_place" jdbcType="CHAR" javaType="java.lang.String" />
-      <arg column="zip_code" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="remark" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="household_relation" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="person_type" jdbcType="CHAR" javaType="java.lang.String" />
-      <arg column="education_level" jdbcType="CHAR" javaType="java.lang.String" />
-      <arg column="is_only" jdbcType="CHAR" javaType="java.lang.String" />
-      <arg column="household_register" jdbcType="CHAR" javaType="java.lang.String" />
-      <arg column="company_register" jdbcType="CHAR" javaType="java.lang.String" />
-      <arg column="household_code" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="household_number" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="is_violation" jdbcType="CHAR" javaType="java.lang.String" />
-      <arg column="husband_id" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="social_security_code" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="social_security_address" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="manage_code" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="national" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="professional_type" jdbcType="CHAR" javaType="java.lang.String" />
-      <arg column="update_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
-      <arg column="create_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
-      <arg column="create_user" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="del_flag" jdbcType="CHAR" javaType="java.lang.String" />
-      <arg column="residential_code" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="house_code" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="work_status" jdbcType="CHAR" javaType="java.lang.String" />
-      <arg column="labor_ability" jdbcType="CHAR" javaType="java.lang.String" />
-      <arg column="health" jdbcType="CHAR" javaType="java.lang.String" />
-      <arg column="serious_disease" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="disablity_syndrome" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="disability_category" jdbcType="CHAR" javaType="java.lang.String" />
-      <arg column="disability_grade" jdbcType="CHAR" javaType="java.lang.String" />
-      <arg column="specific_salvation" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="academic_status" jdbcType="CHAR" javaType="java.lang.String" />
-      <arg column="relationship_applicant" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="is_supplied" jdbcType="CHAR" javaType="java.lang.String" />
-      <arg column="is_be_supplied" jdbcType="CHAR" javaType="java.lang.String" />
-      <arg column="update_user" jdbcType="VARCHAR" javaType="java.lang.String" />
-    </constructor>
-  </resultMap>
-  <sql id="Base_Column_List" >
+<mapper namespace="com.recon.community.mapper.ResidentsMapper">
+    <resultMap id="BaseResultMap" type="com.recon.community.entity.Residents">
+        <constructor>
+            <idArg column="id" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="name" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="gender" jdbcType="CHAR" javaType="java.lang.String"/>
+            <arg column="birthday" jdbcType="DATE" javaType="java.util.Date"/>
+            <arg column="household_address" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="domicile_number" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="domicile_address" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="company" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="division_unit" jdbcType="CHAR" javaType="java.lang.String"/>
+            <arg column="marriage_status" jdbcType="CHAR" javaType="java.lang.String"/>
+            <arg column="marriage_no" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="marriage_date" jdbcType="DATE" javaType="java.util.Date"/>
+            <arg column="political_status" jdbcType="CHAR" javaType="java.lang.String"/>
+            <arg column="is_foreign" jdbcType="CHAR" javaType="java.lang.String"/>
+            <arg column="id_card" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="contact_phone" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="native_place" jdbcType="CHAR" javaType="java.lang.String"/>
+            <arg column="zip_code" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="remark" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="household_relation" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="person_type" jdbcType="CHAR" javaType="java.lang.String"/>
+            <arg column="education_level" jdbcType="CHAR" javaType="java.lang.String"/>
+            <arg column="is_only" jdbcType="CHAR" javaType="java.lang.String"/>
+            <arg column="household_register" jdbcType="CHAR" javaType="java.lang.String"/>
+            <arg column="company_register" jdbcType="CHAR" javaType="java.lang.String"/>
+            <arg column="household_code" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="household_number" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="is_violation" jdbcType="CHAR" javaType="java.lang.String"/>
+            <arg column="husband_id" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="social_security_code" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="social_security_address" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="manage_code" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="national" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="professional_type" jdbcType="CHAR" javaType="java.lang.String"/>
+            <arg column="update_time" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+            <arg column="create_time" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+            <arg column="create_user" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="del_flag" jdbcType="CHAR" javaType="java.lang.String"/>
+            <arg column="residential_code" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="house_code" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="work_status" jdbcType="CHAR" javaType="java.lang.String"/>
+            <arg column="labor_ability" jdbcType="CHAR" javaType="java.lang.String"/>
+            <arg column="health" jdbcType="CHAR" javaType="java.lang.String"/>
+            <arg column="serious_disease" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="disablity_syndrome" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="disability_category" jdbcType="CHAR" javaType="java.lang.String"/>
+            <arg column="disability_grade" jdbcType="CHAR" javaType="java.lang.String"/>
+            <arg column="specific_salvation" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="academic_status" jdbcType="CHAR" javaType="java.lang.String"/>
+            <arg column="relationship_applicant" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="is_supplied" jdbcType="CHAR" javaType="java.lang.String"/>
+            <arg column="is_be_supplied" jdbcType="CHAR" javaType="java.lang.String"/>
+            <arg column="update_user" jdbcType="VARCHAR" javaType="java.lang.String"/>
+        </constructor>
+    </resultMap>
+    <sql id="Base_Column_List">
     id, name, gender, birthday, household_address, domicile_number, domicile_address, 
     company, division_unit, marriage_status, marriage_no, marriage_date, political_status, 
     is_foreign, id_card, contact_phone, native_place, zip_code, remark, household_relation, 
@@ -69,17 +69,17 @@
     disablity_syndrome, disability_category, disability_grade, specific_salvation, academic_status, 
     relationship_applicant, is_supplied, is_be_supplied, update_user
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
-    select 
-    <include refid="Base_Column_List" />
-    from family_residents
-    where id = #{id,jdbcType=VARCHAR}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String">
+        select
+        <include refid="Base_Column_List"/>
+        from family_residents
+        where id = #{id,jdbcType=VARCHAR}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
     delete from family_residents
     where id = #{id,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.recon.community.entity.Residents" >
+    <insert id="insert" parameterType="com.recon.community.entity.Residents">
     insert into family_residents (id, name, gender, 
       birthday, household_address, domicile_number, 
       domicile_address, company, division_unit, 
@@ -117,494 +117,494 @@
       #{academicStatus,jdbcType=CHAR}, #{relationshipApplicant,jdbcType=VARCHAR}, #{isSupplied,jdbcType=CHAR}, 
       #{isBeSupplied,jdbcType=CHAR}, #{updateUser,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.recon.community.entity.Residents" >
-    insert into family_residents
-    <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
-        id,
-      </if>
-      <if test="name != null" >
-        name,
-      </if>
-      <if test="gender != null" >
-        gender,
-      </if>
-      <if test="birthday != null" >
-        birthday,
-      </if>
-      <if test="householdAddress != null" >
-        household_address,
-      </if>
-      <if test="domicileNumber != null" >
-        domicile_number,
-      </if>
-      <if test="domicileAddress != null" >
-        domicile_address,
-      </if>
-      <if test="company != null" >
-        company,
-      </if>
-      <if test="divisionUnit != null" >
-        division_unit,
-      </if>
-      <if test="marriageStatus != null" >
-        marriage_status,
-      </if>
-      <if test="marriageNo != null" >
-        marriage_no,
-      </if>
-      <if test="marriageDate != null" >
-        marriage_date,
-      </if>
-      <if test="politicalStatus != null" >
-        political_status,
-      </if>
-      <if test="isForeign != null" >
-        is_foreign,
-      </if>
-      <if test="idCard != null" >
-        id_card,
-      </if>
-      <if test="contactPhone != null" >
-        contact_phone,
-      </if>
-      <if test="nativePlace != null" >
-        native_place,
-      </if>
-      <if test="zipCode != null" >
-        zip_code,
-      </if>
-      <if test="remark != null" >
-        remark,
-      </if>
-      <if test="householdRelation != null" >
-        household_relation,
-      </if>
-      <if test="personType != null" >
-        person_type,
-      </if>
-      <if test="educationLevel != null" >
-        education_level,
-      </if>
-      <if test="isOnly != null" >
-        is_only,
-      </if>
-      <if test="householdRegister != null" >
-        household_register,
-      </if>
-      <if test="companyRegister != null" >
-        company_register,
-      </if>
-      <if test="householdCode != null" >
-        household_code,
-      </if>
-      <if test="householdNumber != null" >
-        household_number,
-      </if>
-      <if test="isViolation != null" >
-        is_violation,
-      </if>
-      <if test="husbandId != null" >
-        husband_id,
-      </if>
-      <if test="socialSecurityCode != null" >
-        social_security_code,
-      </if>
-      <if test="socialSecurityAddress != null" >
-        social_security_address,
-      </if>
-      <if test="manageCode != null" >
-        manage_code,
-      </if>
-      <if test="national != null" >
-        national,
-      </if>
-      <if test="professionalType != null" >
-        professional_type,
-      </if>
-      <if test="updateTime != null" >
-        update_time,
-      </if>
-      <if test="createTime != null" >
-        create_time,
-      </if>
-      <if test="createUser != null" >
-        create_user,
-      </if>
-      <if test="delFlag != null" >
-        del_flag,
-      </if>
-      <if test="residentialCode != null" >
-        residential_code,
-      </if>
-      <if test="houseCode != null" >
-        house_code,
-      </if>
-      <if test="workStatus != null" >
-        work_status,
-      </if>
-      <if test="laborAbility != null" >
-        labor_ability,
-      </if>
-      <if test="health != null" >
-        health,
-      </if>
-      <if test="seriousDisease != null" >
-        serious_disease,
-      </if>
-      <if test="disablitySyndrome != null" >
-        disablity_syndrome,
-      </if>
-      <if test="disabilityCategory != null" >
-        disability_category,
-      </if>
-      <if test="disabilityGrade != null" >
-        disability_grade,
-      </if>
-      <if test="specificSalvation != null" >
-        specific_salvation,
-      </if>
-      <if test="academicStatus != null" >
-        academic_status,
-      </if>
-      <if test="relationshipApplicant != null" >
-        relationship_applicant,
-      </if>
-      <if test="isSupplied != null" >
-        is_supplied,
-      </if>
-      <if test="isBeSupplied != null" >
-        is_be_supplied,
-      </if>
-      <if test="updateUser != null" >
-        update_user,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
-        #{id,jdbcType=VARCHAR},
-      </if>
-      <if test="name != null" >
-        #{name,jdbcType=VARCHAR},
-      </if>
-      <if test="gender != null" >
-        #{gender,jdbcType=CHAR},
-      </if>
-      <if test="birthday != null" >
-        #{birthday,jdbcType=DATE},
-      </if>
-      <if test="householdAddress != null" >
-        #{householdAddress,jdbcType=VARCHAR},
-      </if>
-      <if test="domicileNumber != null" >
-        #{domicileNumber,jdbcType=VARCHAR},
-      </if>
-      <if test="domicileAddress != null" >
-        #{domicileAddress,jdbcType=VARCHAR},
-      </if>
-      <if test="company != null" >
-        #{company,jdbcType=VARCHAR},
-      </if>
-      <if test="divisionUnit != null" >
-        #{divisionUnit,jdbcType=CHAR},
-      </if>
-      <if test="marriageStatus != null" >
-        #{marriageStatus,jdbcType=CHAR},
-      </if>
-      <if test="marriageNo != null" >
-        #{marriageNo,jdbcType=VARCHAR},
-      </if>
-      <if test="marriageDate != null" >
-        #{marriageDate,jdbcType=DATE},
-      </if>
-      <if test="politicalStatus != null" >
-        #{politicalStatus,jdbcType=CHAR},
-      </if>
-      <if test="isForeign != null" >
-        #{isForeign,jdbcType=CHAR},
-      </if>
-      <if test="idCard != null" >
-        #{idCard,jdbcType=VARCHAR},
-      </if>
-      <if test="contactPhone != null" >
-        #{contactPhone,jdbcType=VARCHAR},
-      </if>
-      <if test="nativePlace != null" >
-        #{nativePlace,jdbcType=CHAR},
-      </if>
-      <if test="zipCode != null" >
-        #{zipCode,jdbcType=VARCHAR},
-      </if>
-      <if test="remark != null" >
-        #{remark,jdbcType=VARCHAR},
-      </if>
-      <if test="householdRelation != null" >
-        #{householdRelation,jdbcType=VARCHAR},
-      </if>
-      <if test="personType != null" >
-        #{personType,jdbcType=CHAR},
-      </if>
-      <if test="educationLevel != null" >
-        #{educationLevel,jdbcType=CHAR},
-      </if>
-      <if test="isOnly != null" >
-        #{isOnly,jdbcType=CHAR},
-      </if>
-      <if test="householdRegister != null" >
-        #{householdRegister,jdbcType=CHAR},
-      </if>
-      <if test="companyRegister != null" >
-        #{companyRegister,jdbcType=CHAR},
-      </if>
-      <if test="householdCode != null" >
-        #{householdCode,jdbcType=VARCHAR},
-      </if>
-      <if test="householdNumber != null" >
-        #{householdNumber,jdbcType=VARCHAR},
-      </if>
-      <if test="isViolation != null" >
-        #{isViolation,jdbcType=CHAR},
-      </if>
-      <if test="husbandId != null" >
-        #{husbandId,jdbcType=VARCHAR},
-      </if>
-      <if test="socialSecurityCode != null" >
-        #{socialSecurityCode,jdbcType=VARCHAR},
-      </if>
-      <if test="socialSecurityAddress != null" >
-        #{socialSecurityAddress,jdbcType=VARCHAR},
-      </if>
-      <if test="manageCode != null" >
-        #{manageCode,jdbcType=VARCHAR},
-      </if>
-      <if test="national != null" >
-        #{national,jdbcType=VARCHAR},
-      </if>
-      <if test="professionalType != null" >
-        #{professionalType,jdbcType=CHAR},
-      </if>
-      <if test="updateTime != null" >
-        #{updateTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="createTime != null" >
-        #{createTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="createUser != null" >
-        #{createUser,jdbcType=VARCHAR},
-      </if>
-      <if test="delFlag != null" >
-        #{delFlag,jdbcType=CHAR},
-      </if>
-      <if test="residentialCode != null" >
-        #{residentialCode,jdbcType=VARCHAR},
-      </if>
-      <if test="houseCode != null" >
-        #{houseCode,jdbcType=VARCHAR},
-      </if>
-      <if test="workStatus != null" >
-        #{workStatus,jdbcType=CHAR},
-      </if>
-      <if test="laborAbility != null" >
-        #{laborAbility,jdbcType=CHAR},
-      </if>
-      <if test="health != null" >
-        #{health,jdbcType=CHAR},
-      </if>
-      <if test="seriousDisease != null" >
-        #{seriousDisease,jdbcType=VARCHAR},
-      </if>
-      <if test="disablitySyndrome != null" >
-        #{disablitySyndrome,jdbcType=VARCHAR},
-      </if>
-      <if test="disabilityCategory != null" >
-        #{disabilityCategory,jdbcType=CHAR},
-      </if>
-      <if test="disabilityGrade != null" >
-        #{disabilityGrade,jdbcType=CHAR},
-      </if>
-      <if test="specificSalvation != null" >
-        #{specificSalvation,jdbcType=VARCHAR},
-      </if>
-      <if test="academicStatus != null" >
-        #{academicStatus,jdbcType=CHAR},
-      </if>
-      <if test="relationshipApplicant != null" >
-        #{relationshipApplicant,jdbcType=VARCHAR},
-      </if>
-      <if test="isSupplied != null" >
-        #{isSupplied,jdbcType=CHAR},
-      </if>
-      <if test="isBeSupplied != null" >
-        #{isBeSupplied,jdbcType=CHAR},
-      </if>
-      <if test="updateUser != null" >
-        #{updateUser,jdbcType=VARCHAR},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.recon.community.entity.Residents" >
-    update family_residents
-    <set >
-      <if test="name != null" >
-        name = #{name,jdbcType=VARCHAR},
-      </if>
-      <if test="gender != null" >
-        gender = #{gender,jdbcType=CHAR},
-      </if>
-      <if test="birthday != null" >
-        birthday = #{birthday,jdbcType=DATE},
-      </if>
-      <if test="householdAddress != null" >
-        household_address = #{householdAddress,jdbcType=VARCHAR},
-      </if>
-      <if test="domicileNumber != null" >
-        domicile_number = #{domicileNumber,jdbcType=VARCHAR},
-      </if>
-      <if test="domicileAddress != null" >
-        domicile_address = #{domicileAddress,jdbcType=VARCHAR},
-      </if>
-      <if test="company != null" >
-        company = #{company,jdbcType=VARCHAR},
-      </if>
-      <if test="divisionUnit != null" >
-        division_unit = #{divisionUnit,jdbcType=CHAR},
-      </if>
-      <if test="marriageStatus != null" >
-        marriage_status = #{marriageStatus,jdbcType=CHAR},
-      </if>
-      <if test="marriageNo != null" >
-        marriage_no = #{marriageNo,jdbcType=VARCHAR},
-      </if>
-      <if test="marriageDate != null" >
-        marriage_date = #{marriageDate,jdbcType=DATE},
-      </if>
-      <if test="politicalStatus != null" >
-        political_status = #{politicalStatus,jdbcType=CHAR},
-      </if>
-      <if test="isForeign != null" >
-        is_foreign = #{isForeign,jdbcType=CHAR},
-      </if>
-      <if test="idCard != null" >
-        id_card = #{idCard,jdbcType=VARCHAR},
-      </if>
-      <if test="contactPhone != null" >
-        contact_phone = #{contactPhone,jdbcType=VARCHAR},
-      </if>
-      <if test="nativePlace != null" >
-        native_place = #{nativePlace,jdbcType=CHAR},
-      </if>
-      <if test="zipCode != null" >
-        zip_code = #{zipCode,jdbcType=VARCHAR},
-      </if>
-      <if test="remark != null" >
-        remark = #{remark,jdbcType=VARCHAR},
-      </if>
-      <if test="householdRelation != null" >
-        household_relation = #{householdRelation,jdbcType=VARCHAR},
-      </if>
-      <if test="personType != null" >
-        person_type = #{personType,jdbcType=CHAR},
-      </if>
-      <if test="educationLevel != null" >
-        education_level = #{educationLevel,jdbcType=CHAR},
-      </if>
-      <if test="isOnly != null" >
-        is_only = #{isOnly,jdbcType=CHAR},
-      </if>
-      <if test="householdRegister != null" >
-        household_register = #{householdRegister,jdbcType=CHAR},
-      </if>
-      <if test="companyRegister != null" >
-        company_register = #{companyRegister,jdbcType=CHAR},
-      </if>
-      <if test="householdCode != null" >
-        household_code = #{householdCode,jdbcType=VARCHAR},
-      </if>
-      <if test="householdNumber != null" >
-        household_number = #{householdNumber,jdbcType=VARCHAR},
-      </if>
-      <if test="isViolation != null" >
-        is_violation = #{isViolation,jdbcType=CHAR},
-      </if>
-      <if test="husbandId != null" >
-        husband_id = #{husbandId,jdbcType=VARCHAR},
-      </if>
-      <if test="socialSecurityCode != null" >
-        social_security_code = #{socialSecurityCode,jdbcType=VARCHAR},
-      </if>
-      <if test="socialSecurityAddress != null" >
-        social_security_address = #{socialSecurityAddress,jdbcType=VARCHAR},
-      </if>
-      <if test="manageCode != null" >
-        manage_code = #{manageCode,jdbcType=VARCHAR},
-      </if>
-      <if test="national != null" >
-        national = #{national,jdbcType=VARCHAR},
-      </if>
-      <if test="professionalType != null" >
-        professional_type = #{professionalType,jdbcType=CHAR},
-      </if>
-      <if test="updateTime != null" >
-        update_time = #{updateTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="createTime != null" >
-        create_time = #{createTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="createUser != null" >
-        create_user = #{createUser,jdbcType=VARCHAR},
-      </if>
-      <if test="delFlag != null" >
-        del_flag = #{delFlag,jdbcType=CHAR},
-      </if>
-      <if test="residentialCode != null" >
-        residential_code = #{residentialCode,jdbcType=VARCHAR},
-      </if>
-      <if test="houseCode != null" >
-        house_code = #{houseCode,jdbcType=VARCHAR},
-      </if>
-      <if test="workStatus != null" >
-        work_status = #{workStatus,jdbcType=CHAR},
-      </if>
-      <if test="laborAbility != null" >
-        labor_ability = #{laborAbility,jdbcType=CHAR},
-      </if>
-      <if test="health != null" >
-        health = #{health,jdbcType=CHAR},
-      </if>
-      <if test="seriousDisease != null" >
-        serious_disease = #{seriousDisease,jdbcType=VARCHAR},
-      </if>
-      <if test="disablitySyndrome != null" >
-        disablity_syndrome = #{disablitySyndrome,jdbcType=VARCHAR},
-      </if>
-      <if test="disabilityCategory != null" >
-        disability_category = #{disabilityCategory,jdbcType=CHAR},
-      </if>
-      <if test="disabilityGrade != null" >
-        disability_grade = #{disabilityGrade,jdbcType=CHAR},
-      </if>
-      <if test="specificSalvation != null" >
-        specific_salvation = #{specificSalvation,jdbcType=VARCHAR},
-      </if>
-      <if test="academicStatus != null" >
-        academic_status = #{academicStatus,jdbcType=CHAR},
-      </if>
-      <if test="relationshipApplicant != null" >
-        relationship_applicant = #{relationshipApplicant,jdbcType=VARCHAR},
-      </if>
-      <if test="isSupplied != null" >
-        is_supplied = #{isSupplied,jdbcType=CHAR},
-      </if>
-      <if test="isBeSupplied != null" >
-        is_be_supplied = #{isBeSupplied,jdbcType=CHAR},
-      </if>
-      <if test="updateUser != null" >
-        update_user = #{updateUser,jdbcType=VARCHAR},
-      </if>
-    </set>
-    where id = #{id,jdbcType=VARCHAR}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.recon.community.entity.Residents" >
+    <insert id="insertSelective" parameterType="com.recon.community.entity.Residents">
+        insert into family_residents
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="name != null">
+                name,
+            </if>
+            <if test="gender != null">
+                gender,
+            </if>
+            <if test="birthday != null">
+                birthday,
+            </if>
+            <if test="householdAddress != null">
+                household_address,
+            </if>
+            <if test="domicileNumber != null">
+                domicile_number,
+            </if>
+            <if test="domicileAddress != null">
+                domicile_address,
+            </if>
+            <if test="company != null">
+                company,
+            </if>
+            <if test="divisionUnit != null">
+                division_unit,
+            </if>
+            <if test="marriageStatus != null">
+                marriage_status,
+            </if>
+            <if test="marriageNo != null">
+                marriage_no,
+            </if>
+            <if test="marriageDate != null">
+                marriage_date,
+            </if>
+            <if test="politicalStatus != null">
+                political_status,
+            </if>
+            <if test="isForeign != null">
+                is_foreign,
+            </if>
+            <if test="idCard != null">
+                id_card,
+            </if>
+            <if test="contactPhone != null">
+                contact_phone,
+            </if>
+            <if test="nativePlace != null">
+                native_place,
+            </if>
+            <if test="zipCode != null">
+                zip_code,
+            </if>
+            <if test="remark != null">
+                remark,
+            </if>
+            <if test="householdRelation != null">
+                household_relation,
+            </if>
+            <if test="personType != null">
+                person_type,
+            </if>
+            <if test="educationLevel != null">
+                education_level,
+            </if>
+            <if test="isOnly != null">
+                is_only,
+            </if>
+            <if test="householdRegister != null">
+                household_register,
+            </if>
+            <if test="companyRegister != null">
+                company_register,
+            </if>
+            <if test="householdCode != null">
+                household_code,
+            </if>
+            <if test="householdNumber != null">
+                household_number,
+            </if>
+            <if test="isViolation != null">
+                is_violation,
+            </if>
+            <if test="husbandId != null">
+                husband_id,
+            </if>
+            <if test="socialSecurityCode != null">
+                social_security_code,
+            </if>
+            <if test="socialSecurityAddress != null">
+                social_security_address,
+            </if>
+            <if test="manageCode != null">
+                manage_code,
+            </if>
+            <if test="national != null">
+                national,
+            </if>
+            <if test="professionalType != null">
+                professional_type,
+            </if>
+            <if test="updateTime != null">
+                update_time,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+            <if test="createUser != null">
+                create_user,
+            </if>
+            <if test="delFlag != null">
+                del_flag,
+            </if>
+            <if test="residentialCode != null">
+                residential_code,
+            </if>
+            <if test="houseCode != null">
+                house_code,
+            </if>
+            <if test="workStatus != null">
+                work_status,
+            </if>
+            <if test="laborAbility != null">
+                labor_ability,
+            </if>
+            <if test="health != null">
+                health,
+            </if>
+            <if test="seriousDisease != null">
+                serious_disease,
+            </if>
+            <if test="disablitySyndrome != null">
+                disablity_syndrome,
+            </if>
+            <if test="disabilityCategory != null">
+                disability_category,
+            </if>
+            <if test="disabilityGrade != null">
+                disability_grade,
+            </if>
+            <if test="specificSalvation != null">
+                specific_salvation,
+            </if>
+            <if test="academicStatus != null">
+                academic_status,
+            </if>
+            <if test="relationshipApplicant != null">
+                relationship_applicant,
+            </if>
+            <if test="isSupplied != null">
+                is_supplied,
+            </if>
+            <if test="isBeSupplied != null">
+                is_be_supplied,
+            </if>
+            <if test="updateUser != null">
+                update_user,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=VARCHAR},
+            </if>
+            <if test="name != null">
+                #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="gender != null">
+                #{gender,jdbcType=CHAR},
+            </if>
+            <if test="birthday != null">
+                #{birthday,jdbcType=DATE},
+            </if>
+            <if test="householdAddress != null">
+                #{householdAddress,jdbcType=VARCHAR},
+            </if>
+            <if test="domicileNumber != null">
+                #{domicileNumber,jdbcType=VARCHAR},
+            </if>
+            <if test="domicileAddress != null">
+                #{domicileAddress,jdbcType=VARCHAR},
+            </if>
+            <if test="company != null">
+                #{company,jdbcType=VARCHAR},
+            </if>
+            <if test="divisionUnit != null">
+                #{divisionUnit,jdbcType=CHAR},
+            </if>
+            <if test="marriageStatus != null">
+                #{marriageStatus,jdbcType=CHAR},
+            </if>
+            <if test="marriageNo != null">
+                #{marriageNo,jdbcType=VARCHAR},
+            </if>
+            <if test="marriageDate != null">
+                #{marriageDate,jdbcType=DATE},
+            </if>
+            <if test="politicalStatus != null">
+                #{politicalStatus,jdbcType=CHAR},
+            </if>
+            <if test="isForeign != null">
+                #{isForeign,jdbcType=CHAR},
+            </if>
+            <if test="idCard != null">
+                #{idCard,jdbcType=VARCHAR},
+            </if>
+            <if test="contactPhone != null">
+                #{contactPhone,jdbcType=VARCHAR},
+            </if>
+            <if test="nativePlace != null">
+                #{nativePlace,jdbcType=CHAR},
+            </if>
+            <if test="zipCode != null">
+                #{zipCode,jdbcType=VARCHAR},
+            </if>
+            <if test="remark != null">
+                #{remark,jdbcType=VARCHAR},
+            </if>
+            <if test="householdRelation != null">
+                #{householdRelation,jdbcType=VARCHAR},
+            </if>
+            <if test="personType != null">
+                #{personType,jdbcType=CHAR},
+            </if>
+            <if test="educationLevel != null">
+                #{educationLevel,jdbcType=CHAR},
+            </if>
+            <if test="isOnly != null">
+                #{isOnly,jdbcType=CHAR},
+            </if>
+            <if test="householdRegister != null">
+                #{householdRegister,jdbcType=CHAR},
+            </if>
+            <if test="companyRegister != null">
+                #{companyRegister,jdbcType=CHAR},
+            </if>
+            <if test="householdCode != null">
+                #{householdCode,jdbcType=VARCHAR},
+            </if>
+            <if test="householdNumber != null">
+                #{householdNumber,jdbcType=VARCHAR},
+            </if>
+            <if test="isViolation != null">
+                #{isViolation,jdbcType=CHAR},
+            </if>
+            <if test="husbandId != null">
+                #{husbandId,jdbcType=VARCHAR},
+            </if>
+            <if test="socialSecurityCode != null">
+                #{socialSecurityCode,jdbcType=VARCHAR},
+            </if>
+            <if test="socialSecurityAddress != null">
+                #{socialSecurityAddress,jdbcType=VARCHAR},
+            </if>
+            <if test="manageCode != null">
+                #{manageCode,jdbcType=VARCHAR},
+            </if>
+            <if test="national != null">
+                #{national,jdbcType=VARCHAR},
+            </if>
+            <if test="professionalType != null">
+                #{professionalType,jdbcType=CHAR},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="createTime != null">
+                #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="createUser != null">
+                #{createUser,jdbcType=VARCHAR},
+            </if>
+            <if test="delFlag != null">
+                #{delFlag,jdbcType=CHAR},
+            </if>
+            <if test="residentialCode != null">
+                #{residentialCode,jdbcType=VARCHAR},
+            </if>
+            <if test="houseCode != null">
+                #{houseCode,jdbcType=VARCHAR},
+            </if>
+            <if test="workStatus != null">
+                #{workStatus,jdbcType=CHAR},
+            </if>
+            <if test="laborAbility != null">
+                #{laborAbility,jdbcType=CHAR},
+            </if>
+            <if test="health != null">
+                #{health,jdbcType=CHAR},
+            </if>
+            <if test="seriousDisease != null">
+                #{seriousDisease,jdbcType=VARCHAR},
+            </if>
+            <if test="disablitySyndrome != null">
+                #{disablitySyndrome,jdbcType=VARCHAR},
+            </if>
+            <if test="disabilityCategory != null">
+                #{disabilityCategory,jdbcType=CHAR},
+            </if>
+            <if test="disabilityGrade != null">
+                #{disabilityGrade,jdbcType=CHAR},
+            </if>
+            <if test="specificSalvation != null">
+                #{specificSalvation,jdbcType=VARCHAR},
+            </if>
+            <if test="academicStatus != null">
+                #{academicStatus,jdbcType=CHAR},
+            </if>
+            <if test="relationshipApplicant != null">
+                #{relationshipApplicant,jdbcType=VARCHAR},
+            </if>
+            <if test="isSupplied != null">
+                #{isSupplied,jdbcType=CHAR},
+            </if>
+            <if test="isBeSupplied != null">
+                #{isBeSupplied,jdbcType=CHAR},
+            </if>
+            <if test="updateUser != null">
+                #{updateUser,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.recon.community.entity.Residents">
+        update family_residents
+        <set>
+            <if test="name != null">
+                name = #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="gender != null">
+                gender = #{gender,jdbcType=CHAR},
+            </if>
+            <if test="birthday != null">
+                birthday = #{birthday,jdbcType=DATE},
+            </if>
+            <if test="householdAddress != null">
+                household_address = #{householdAddress,jdbcType=VARCHAR},
+            </if>
+            <if test="domicileNumber != null">
+                domicile_number = #{domicileNumber,jdbcType=VARCHAR},
+            </if>
+            <if test="domicileAddress != null">
+                domicile_address = #{domicileAddress,jdbcType=VARCHAR},
+            </if>
+            <if test="company != null">
+                company = #{company,jdbcType=VARCHAR},
+            </if>
+            <if test="divisionUnit != null">
+                division_unit = #{divisionUnit,jdbcType=CHAR},
+            </if>
+            <if test="marriageStatus != null">
+                marriage_status = #{marriageStatus,jdbcType=CHAR},
+            </if>
+            <if test="marriageNo != null">
+                marriage_no = #{marriageNo,jdbcType=VARCHAR},
+            </if>
+            <if test="marriageDate != null">
+                marriage_date = #{marriageDate,jdbcType=DATE},
+            </if>
+            <if test="politicalStatus != null">
+                political_status = #{politicalStatus,jdbcType=CHAR},
+            </if>
+            <if test="isForeign != null">
+                is_foreign = #{isForeign,jdbcType=CHAR},
+            </if>
+            <if test="idCard != null">
+                id_card = #{idCard,jdbcType=VARCHAR},
+            </if>
+            <if test="contactPhone != null">
+                contact_phone = #{contactPhone,jdbcType=VARCHAR},
+            </if>
+            <if test="nativePlace != null">
+                native_place = #{nativePlace,jdbcType=CHAR},
+            </if>
+            <if test="zipCode != null">
+                zip_code = #{zipCode,jdbcType=VARCHAR},
+            </if>
+            <if test="remark != null">
+                remark = #{remark,jdbcType=VARCHAR},
+            </if>
+            <if test="householdRelation != null">
+                household_relation = #{householdRelation,jdbcType=VARCHAR},
+            </if>
+            <if test="personType != null">
+                person_type = #{personType,jdbcType=CHAR},
+            </if>
+            <if test="educationLevel != null">
+                education_level = #{educationLevel,jdbcType=CHAR},
+            </if>
+            <if test="isOnly != null">
+                is_only = #{isOnly,jdbcType=CHAR},
+            </if>
+            <if test="householdRegister != null">
+                household_register = #{householdRegister,jdbcType=CHAR},
+            </if>
+            <if test="companyRegister != null">
+                company_register = #{companyRegister,jdbcType=CHAR},
+            </if>
+            <if test="householdCode != null">
+                household_code = #{householdCode,jdbcType=VARCHAR},
+            </if>
+            <if test="householdNumber != null">
+                household_number = #{householdNumber,jdbcType=VARCHAR},
+            </if>
+            <if test="isViolation != null">
+                is_violation = #{isViolation,jdbcType=CHAR},
+            </if>
+            <if test="husbandId != null">
+                husband_id = #{husbandId,jdbcType=VARCHAR},
+            </if>
+            <if test="socialSecurityCode != null">
+                social_security_code = #{socialSecurityCode,jdbcType=VARCHAR},
+            </if>
+            <if test="socialSecurityAddress != null">
+                social_security_address = #{socialSecurityAddress,jdbcType=VARCHAR},
+            </if>
+            <if test="manageCode != null">
+                manage_code = #{manageCode,jdbcType=VARCHAR},
+            </if>
+            <if test="national != null">
+                national = #{national,jdbcType=VARCHAR},
+            </if>
+            <if test="professionalType != null">
+                professional_type = #{professionalType,jdbcType=CHAR},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="createUser != null">
+                create_user = #{createUser,jdbcType=VARCHAR},
+            </if>
+            <if test="delFlag != null">
+                del_flag = #{delFlag,jdbcType=CHAR},
+            </if>
+            <if test="residentialCode != null">
+                residential_code = #{residentialCode,jdbcType=VARCHAR},
+            </if>
+            <if test="houseCode != null">
+                house_code = #{houseCode,jdbcType=VARCHAR},
+            </if>
+            <if test="workStatus != null">
+                work_status = #{workStatus,jdbcType=CHAR},
+            </if>
+            <if test="laborAbility != null">
+                labor_ability = #{laborAbility,jdbcType=CHAR},
+            </if>
+            <if test="health != null">
+                health = #{health,jdbcType=CHAR},
+            </if>
+            <if test="seriousDisease != null">
+                serious_disease = #{seriousDisease,jdbcType=VARCHAR},
+            </if>
+            <if test="disablitySyndrome != null">
+                disablity_syndrome = #{disablitySyndrome,jdbcType=VARCHAR},
+            </if>
+            <if test="disabilityCategory != null">
+                disability_category = #{disabilityCategory,jdbcType=CHAR},
+            </if>
+            <if test="disabilityGrade != null">
+                disability_grade = #{disabilityGrade,jdbcType=CHAR},
+            </if>
+            <if test="specificSalvation != null">
+                specific_salvation = #{specificSalvation,jdbcType=VARCHAR},
+            </if>
+            <if test="academicStatus != null">
+                academic_status = #{academicStatus,jdbcType=CHAR},
+            </if>
+            <if test="relationshipApplicant != null">
+                relationship_applicant = #{relationshipApplicant,jdbcType=VARCHAR},
+            </if>
+            <if test="isSupplied != null">
+                is_supplied = #{isSupplied,jdbcType=CHAR},
+            </if>
+            <if test="isBeSupplied != null">
+                is_be_supplied = #{isBeSupplied,jdbcType=CHAR},
+            </if>
+            <if test="updateUser != null">
+                update_user = #{updateUser,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=VARCHAR}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.recon.community.entity.Residents">
     update family_residents
     set name = #{name,jdbcType=VARCHAR},
       gender = #{gender,jdbcType=CHAR},
@@ -660,4 +660,17 @@
       update_user = #{updateUser,jdbcType=VARCHAR}
     where id = #{id,jdbcType=VARCHAR}
   </update>
+
+
+    <select id="listResidents" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"></include>
+        from family_residents t
+        where del_flag = '0'
+        and t.house_code = #{houseCode}
+    </select>
+
+    <update id="deleteUser">
+        update family_residents set del_flag = '1' where id = #{id}
+    </update>
 </mapper>

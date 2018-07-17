@@ -51,7 +51,7 @@ public class UserController {
         return result;
     }
 
-    @GetMapping("family")
+    @GetMapping("family/{id}")
     @ApiOperation(value = "获取家庭成员",notes = "获取家庭成员", produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiImplicitParam(name = "id", value = "居民id", paramType = "path", dataType = "String", required = true)
     public OptResult listFamily(@PathVariable String id) {
@@ -61,6 +61,35 @@ public class UserController {
         result.setBody(residentsList);
         return result;
     }
+
+    @DeleteMapping("delete/{id}")
+    @ApiOperation(value = "删除用户",notes = "删除用户", produces = MediaType.APPLICATION_JSON_VALUE)
+    @ApiImplicitParam(name = "id", value = "用户id", paramType = "path", dataType = "String", required = true)
+    public OptResult deleteUser(@PathVariable String id) {
+        logger.info("删除用户 id" + id);
+        OptResult result = new OptResult();
+        userService.delelteUser(id);
+        return result;
+    }
+
+    @PutMapping("update/")
+    @ApiOperation(value = "修改用户",notes = "修改用户", produces = MediaType.APPLICATION_JSON_VALUE)
+    public OptResult updateUser(@RequestBody Residents residents) {
+        logger.info("修改用户 residents:" + JSONObject.toJSONString(residents));
+        OptResult result = new OptResult();
+        userService.updateUser(residents);
+        return result;
+    }
+
+    @PutMapping("add/")
+    @ApiOperation(value = "添加用户",notes = "添加用户", produces = MediaType.APPLICATION_JSON_VALUE)
+    public OptResult addUser(@RequestBody Residents residents) {
+        logger.info("添加用户 residents:" + JSONObject.toJSONString(residents));
+        OptResult result = new OptResult();
+        userService.addUser(residents);
+        return result;
+    }
+
 
 
 }

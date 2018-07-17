@@ -41,4 +41,25 @@ public interface UserService extends IService<User> {
      * @return
      */
     List<Residents> listFamily(String id);
+
+    /**
+     * 删除用户
+     *
+     * @param id
+     */
+    void delelteUser(String id);
+
+    /**
+     * 修改用户
+     *
+     * @param residents
+     */
+    void updateUser(Residents residents);
+
+    /**
+     * 添加用户
+     *
+     * @param residents
+     */
+    void addUser(Residents residents);
 }

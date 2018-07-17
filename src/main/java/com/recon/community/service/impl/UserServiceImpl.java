@@ -1,6 +1,7 @@
 package com.recon.community.service.impl;
 
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
+import com.google.common.collect.Lists;
 import com.recon.community.entity.Operation;
 import com.recon.community.entity.Residents;
 import com.recon.community.entity.User;
@@ -44,12 +45,12 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
     public User login(UserVO userVO) {
         // 获取用户
         User user = userMapper.getUserByUsernameAndPassword(userVO);
-        if(user==null){
-            throw  new InvalidException("用户不存在");
+        if (user == null) {
+            throw new InvalidException("用户不存在");
         }
         String token = "token";
-        userMapper.setTokenById(user.getId(),token);
-        redisTemplateUtil.set(token,user.getId());
+        userMapper.setTokenById(user.getId(), token);
+        redisTemplateUtil.set(token, user.getId());
         user.setToken(token);
         String id = UuidUtil.getUuid();
         Operation operation = new Operation(id, user.getId(), "用户模块", "用户登陆", new Date(), "0");
@@ -68,7 +69,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         Residents residents = new Residents();
         String userId = redisTemplateUtil.get("token");
         User user = userMapper.selectById(userId);
-        if(user!=null& StringUtils.isNotBlank(user.getResidentsId())){
+        if (user != null & StringUtils.isNotBlank(user.getResidentsId())) {
             residents = residentsMapper.selectByPrimaryKey(user.getResidentsId());
         }
         return residents;
@@ -76,8 +77,36 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
 
     @Override
     public List<Residents> listFamily(String id) {
+        List<Residents> residentsList = Lists.newArrayList();
         Residents residents = residentsMapper.selectByPrimaryKey(id);
+        if (residents != null ) {
+            residentsList = residentsMapper.listResidents(residents.getHouseCode());
+            if (residentsList != null & residentsList.size() > 0) {
+                for (Residents residents1 : residentsList) {
+                    if(residents1.getId().equals(residents.getId())){
+                        residentsList.remove(residents1);
+                        break;
+                    }
+                }
+            }
+        }
+        return residentsList;
+    }
 
-        return null;
+    @Override
+    public void delelteUser(String id) {
+        residentsMapper.deleteUser(id);
+    }
+
+    @Override
+    public void updateUser(Residents residents) {
+        residentsMapper.updateByPrimaryKey(residents);
+    }
+
+    @Override
+    public void addUser(Residents residents) {
+        String id = UuidUtil.getUuid();
+        residents.setId(id);
+        residentsMapper.insert(residents);
     }
 }
