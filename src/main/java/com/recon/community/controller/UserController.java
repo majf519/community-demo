@@ -1,6 +1,7 @@
 package com.recon.community.controller;
 
 import com.alibaba.fastjson.JSONObject;
+import com.recon.community.entity.Residents;
 import com.recon.community.entity.User;
 import com.recon.community.service.UserService;
 import com.recon.community.vo.UserVO;
@@ -26,16 +27,27 @@ public class UserController {
     private static Logger logger = LoggerFactory.getLogger(UserController.class);
 
     @Autowired
-    private UserService dictService;
+    private UserService userService;
 
     @ApiOperation(value = "用户登陆", notes = "用户登陆", produces = MediaType.APPLICATION_JSON_VALUE)
     @PostMapping(value = "/login")
-    public OptResult addDict(@ApiParam(name = "userVO", value = "用户对象", required = true) @RequestBody @Validated UserVO userVO) {
+    public OptResult loginUser(@ApiParam(name = "userVO", value = "用户对象", required = true) @RequestBody @Validated UserVO userVO) {
         logger.info("用户登陆 userVO:" + JSONObject.toJSONString(userVO));
         OptResult result = new OptResult();
-        User user = dictService.login(userVO);
+        User user = userService.login(userVO);
         result.setBody(user);
         return result;
     }
+
+    @ApiOperation(value = "获取用户", notes = "获取用户", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/get")
+    public OptResult getUser() {
+        logger.info("获取用户");
+        OptResult result = new OptResult();
+        Residents residents = userService.getUser();
+        result.setBody(residents);
+        return result;
+    }
+
 
 }

@@ -1,6 +1,7 @@
 package com.recon.community.service;
 
 import com.baomidou.mybatisplus.service.IService;
+import com.recon.community.entity.Residents;
 import com.recon.community.entity.User;
 import com.recon.community.vo.UserVO;
 
@@ -23,4 +24,11 @@ public interface UserService extends IService<User> {
      * 根据token获取用户
      */
     User getUserByToken(String token);
+
+    /**
+     * 获取用户
+     *
+     * @return
+     */
+    Residents getUser();
 }

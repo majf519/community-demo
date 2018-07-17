@@ -25,8 +25,8 @@ public class User {
     @TableField(value = "user_type")
     private String userType;
 
-    @TableField(value = "id_card")
-    private String idCard;
+    @TableField(value = "residents_id")
+    private String residentsId;
 
     @TableField(value = "del_flag")
     private String delFlag;
@@ -71,12 +71,12 @@ public class User {
         this.userType = userType;
     }
 
-    public String getIdCard() {
-        return idCard;
+    public String getResidentsId() {
+        return residentsId;
     }
 
-    public void setIdCard(String idCard) {
-        this.idCard = idCard;
+    public void setResidentsId(String residentsId) {
+        this.residentsId = residentsId;
     }
 
     public String getDelFlag() {
@@ -95,7 +95,7 @@ public class User {
                 ", password='" + password + '\'' +
                 ", token='" + token + '\'' +
                 ", userType='" + userType + '\'' +
-                ", idCard='" + idCard + '\'' +
+                ", residentsId='" + residentsId + '\'' +
                 ", delFlag='" + delFlag + '\'' +
                 '}';
     }

@@ -2,14 +2,17 @@ package com.recon.community.service.impl;
 
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import com.recon.community.entity.Operation;
+import com.recon.community.entity.Residents;
 import com.recon.community.entity.User;
 import com.recon.community.exception.InvalidException;
+import com.recon.community.mapper.ResidentsMapper;
 import com.recon.community.mapper.UserMapper;
 import com.recon.community.service.OperationService;
 import com.recon.community.service.UserService;
 import com.recon.community.util.RedisTemplateUtil;
 import com.recon.community.util.UuidUtil;
 import com.recon.community.vo.UserVO;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -26,6 +29,9 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
 
     @Autowired
     private UserMapper userMapper;
+
+    @Autowired
+    private ResidentsMapper residentsMapper;
 
     @Autowired
     private RedisTemplateUtil redisTemplateUtil;
@@ -53,5 +59,17 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
     @Override
     public User getUserByToken(String token) {
         return userMapper.getUserByToken(token);
+    }
+
+    @Override
+    public Residents getUser() {
+        // todo 身份证扫描
+        Residents residents = new Residents();
+        String userId = redisTemplateUtil.get("token");
+        User user = userMapper.selectById(userId);
+        if(user!=null& StringUtils.isNotBlank(user.getResidentsId())){
+            residents = residentsMapper.selectByPrimaryKey(user.getResidentsId());
+        }
+        return residents;
     }
 }
