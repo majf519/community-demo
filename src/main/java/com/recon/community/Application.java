@@ -6,7 +6,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * @author daniel.xue
+ * @author danielxue
  * @create 2018/7/9
  **/
 @SpringBootApplication(scanBasePackages = {"com.recon.community", "com.recon.core"})
