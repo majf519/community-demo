@@ -27,23 +27,13 @@ public class SwaggerConfig {
     @Bean
     public Docket createRestApi() {
         ParameterBuilder aParameterBuilder = new ParameterBuilder();
-        aParameterBuilder
-                .parameterType("header")
-                .name("token")
-                .defaultValue("token")
-                .description("header中token字段测试")
-                .modelRef(new ModelRef("string"))
-                .required(false).build();
-        List<Parameter> aParameters = new ArrayList<>();
-        aParameters.add(aParameterBuilder.build());
-
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()
+                //为当前包路径
                 .apis(RequestHandlerSelectors.basePackage("com.recon.community.controller"))
                 .paths(PathSelectors.any())
-                .build()
-                .globalOperationParameters(aParameters);
+                .build();
     }
 
     private ApiInfo apiInfo() {

@@ -36,13 +36,13 @@ public class CommunityInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o) throws Exception {
 
-        String token = httpServletRequest.getHeader("token");
-        if (StringUtils.isBlank(token)) {
-            throw new InvalidException("no token");
-        }
-        if (StringUtils.isBlank(redisTemplateUtil.get(token))) {
-            throw new InvalidException("token过期");
-        }
+//        String token = httpServletRequest.getHeader("token");
+//        if (StringUtils.isBlank(token)) {
+//            throw new InvalidException("no token");
+//        }
+//        if (StringUtils.isBlank(redisTemplateUtil.get(token))) {
+//            throw new InvalidException("token过期");
+//        }
         return true;
     }
 
@@ -53,21 +53,22 @@ public class CommunityInterceptor implements HandlerInterceptor {
 
     @Override
     public void afterCompletion(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, Exception e) throws Exception {
-        String token = httpServletRequest.getHeader("token");
-        String servletPath = httpServletRequest.getServletPath();
-        String method = httpServletRequest.getMethod();
-        String[] operation = servletPath.split("community");
-        if (operation.length > 1) {
-            String operationModule = operation[1].toLowerCase().replace("/", "");
 
-            if (!StringUtils.isEmpty(token)) {
-                String userId = redisTemplateUtil.get(token);
-                String module = OperationEnum.getDescByCode(operationModule);
-                String operationMethod = OperationEnum.getDescByCode(operationModule + "_" + method.toLowerCase());
-                String id = UuidUtil.getUuid();
-                Operation operation1 = new Operation(id, userId, module, operationMethod, new Date(), "0");
-                operationService.insert(operation1);
-            }
-        }
+//        String token = httpServletRequest.getHeader("token");
+//        String servletPath = httpServletRequest.getServletPath();
+//        String method = httpServletRequest.getMethod();
+//        String[] operation = servletPath.split("community");
+//        if (operation.length > 1) {
+//            String operationModule = operation[1].toLowerCase().replace("/", "");
+//
+//            if (!StringUtils.isEmpty(token)) {
+//                String userId = redisTemplateUtil.get(token);
+//                String module = OperationEnum.getDescByCode(operationModule);
+//                String operationMethod = OperationEnum.getDescByCode(operationModule + "_" + method.toLowerCase());
+//                String id = UuidUtil.getUuid();
+//                Operation operation1 = new Operation(id, userId, module, operationMethod, new Date(), "0");
+//                operationService.insert(operation1);
+//            }
+//        }
     }
 }
