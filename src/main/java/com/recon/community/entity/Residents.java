@@ -77,6 +77,7 @@ public class Residents {
 
     private String husbandId;
 
+    @TableField(value = "social_security_code")
     private String socialSecurityCode;
 
     private String socialSecurityAddress;
@@ -85,6 +86,9 @@ public class Residents {
 
     @TableField(value = "national")
     private String national;
+
+    @TableField(value = "family_num")
+    private Integer familyNum;
 
     private String professionalType;
 
@@ -127,7 +131,7 @@ public class Residents {
 
     private String updateUser;
 
-    public Residents(String id, String name, String gender, Date birthday, String householdAddress, String domicileNumber, String domicileAddress, String company, String divisionUnit, String marriageStatus, String marriageNo, Date marriageDate, String politicalStatus, String isForeign, String idCard, String contactPhone, String nativePlace, String zipCode, String remark, String householdRelation, String personType, String educationLevel, String isOnly, String householdRegister, String companyRegister, String householdCode, String householdNumber, String isViolation, String husbandId, String socialSecurityCode, String socialSecurityAddress, String manageCode, String national, String professionalType, Date updateTime, Date createTime, String createUser, String delFlag, String residentialCode, String houseCode, String workStatus, String laborAbility, String health, String seriousDisease, String disablitySyndrome, String disabilityCategory, String disabilityGrade, String specificSalvation, String academicStatus, String relationshipApplicant, String isSupplied, String isBeSupplied, String updateUser) {
+    public Residents(String id, String name, String gender, Date birthday, String householdAddress, String domicileNumber, String domicileAddress, String company, String divisionUnit, String marriageStatus, String marriageNo, Date marriageDate, String politicalStatus, String isForeign, String idCard, String contactPhone, String nativePlace, String zipCode, String remark, String householdRelation, String personType, String educationLevel, String isOnly, String householdRegister, String companyRegister, String householdCode, String householdNumber, String isViolation, String husbandId, String socialSecurityCode, String socialSecurityAddress, String manageCode, String national, String professionalType, Date updateTime, Date createTime, String createUser, String delFlag, String residentialCode, String houseCode, String workStatus, String laborAbility, String health, String seriousDisease, String disablitySyndrome, String disabilityCategory, String disabilityGrade, String specificSalvation, String academicStatus, String relationshipApplicant, String isSupplied, String isBeSupplied, String updateUser,Integer familyNum) {
         this.id = id;
         this.name = name;
         this.gender = gender;
@@ -181,6 +185,15 @@ public class Residents {
         this.isSupplied = isSupplied;
         this.isBeSupplied = isBeSupplied;
         this.updateUser = updateUser;
+        this.familyNum = familyNum;
+    }
+
+    public Integer getFamilyNum() {
+        return familyNum;
+    }
+
+    public void setFamilyNum(Integer familyNum) {
+        this.familyNum = familyNum;
     }
 
     public Residents() {

@@ -83,7 +83,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
             residentsList = residentsMapper.listResidents(residents.getHouseCode());
             if (residentsList != null & residentsList.size() > 0) {
                 for (Residents residents1 : residentsList) {
-                    if(residents1.getId().equals(residents.getId())){
+                    if(residents1.getId().equals(id)){
                         residentsList.remove(residents1);
                         break;
                     }

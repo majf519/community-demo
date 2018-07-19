@@ -17,6 +17,8 @@ import java.io.Serializable;
 public class DictVO implements Serializable{
 
     private static final long serialVersionUID = -5119373630007323026L;
+
+    private String id;
     /**
      * 字典名称
      */
@@ -50,6 +52,14 @@ public class DictVO implements Serializable{
     @ApiModelProperty(value = "类型",required = true)
     @NotBlank
     private String type;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public static long getSerialVersionUID() {
         return serialVersionUID;

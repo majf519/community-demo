@@ -56,6 +56,7 @@
             <arg column="is_supplied" jdbcType="CHAR" javaType="java.lang.String"/>
             <arg column="is_be_supplied" jdbcType="CHAR" javaType="java.lang.String"/>
             <arg column="update_user" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="family_num" jdbcType="INTEGER" javaType="int"/>
         </constructor>
     </resultMap>
     <sql id="Base_Column_List">
@@ -67,7 +68,7 @@
     manage_code, national, professional_type, update_time, create_time, create_user, 
     del_flag, residential_code, house_code, work_status, labor_ability, health, serious_disease, 
     disablity_syndrome, disability_category, disability_grade, specific_salvation, academic_status, 
-    relationship_applicant, is_supplied, is_be_supplied, update_user
+    relationship_applicant, is_supplied, is_be_supplied, update_user,family_num
   </sql>
     <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String">
         select

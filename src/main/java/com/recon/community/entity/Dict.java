@@ -13,7 +13,7 @@ import java.util.Date;
 @TableName(value = "sys_dict")
 public class Dict {
 
-    @TableId
+    @TableId(value = "id")
     private String id;
 
     @TableField(value = "type")
