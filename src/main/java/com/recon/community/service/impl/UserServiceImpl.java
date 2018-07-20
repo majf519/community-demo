@@ -70,7 +70,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         String userId = redisTemplateUtil.get("token");
         User user = userMapper.selectById(userId);
         if (user != null & StringUtils.isNotBlank(user.getResidentsId())) {
-            residents = residentsMapper.selectByPrimaryKey(user.getResidentsId());
+            residents = residentsMapper.selectById(user.getResidentsId());
         }
         return residents;
     }
@@ -78,7 +78,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
     @Override
     public List<Residents> listFamily(String id) {
         List<Residents> residentsList = Lists.newArrayList();
-        Residents residents = residentsMapper.selectByPrimaryKey(id);
+        Residents residents = residentsMapper.selectById(id);
         if (residents != null ) {
             residentsList = residentsMapper.listResidents(residents.getHouseCode());
             if (residentsList != null & residentsList.size() > 0) {

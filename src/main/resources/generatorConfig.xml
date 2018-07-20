@@ -68,7 +68,7 @@
         </javaClientGenerator>
 
 
-        <table tableName="civilalms_apply" domainObjectName="civilAlmsApply"
+        <table tableName="civil_month_income" domainObjectName="civilMonthIncome"
                enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false">

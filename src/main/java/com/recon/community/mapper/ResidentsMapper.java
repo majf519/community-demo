@@ -1,18 +1,13 @@
 package com.recon.community.mapper;
 
+import com.baomidou.mybatisplus.mapper.BaseMapper;
 import com.recon.community.entity.Residents;
+import com.recon.community.entity.User;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
-public interface ResidentsMapper {
-    int deleteByPrimaryKey(String id);
-
-    int insert(Residents record);
-
-    int insertSelective(Residents record);
-
-    Residents selectByPrimaryKey(String id);
+public interface ResidentsMapper extends BaseMapper<Residents> {
 
     int updateByPrimaryKeySelective(Residents record);
 

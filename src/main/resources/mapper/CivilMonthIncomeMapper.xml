@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.recon.community.mapper.CivilMonthIncomeMapper" >
+  <resultMap id="BaseResultMap" type="com.recon.community.entity.CivilMonthIncome" >
+    <constructor >
+      <idArg column="id" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="resident_id" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="income_category" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="money" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="no_money" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="reckon_in_money" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="real_money" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="create_user" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="create_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="upate_user" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="update_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="del_flag" jdbcType="CHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, resident_id, income_category, money, no_money, reckon_in_money, real_money, create_user, 
+    create_time, upate_user, update_time, del_flag
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from civil_month_income
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from civil_month_income
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.recon.community.entity.CivilMonthIncome" >
+    insert into civil_month_income (id, resident_id, income_category, 
+      money, no_money, reckon_in_money, 
+      real_money, create_user, create_time, 
+      upate_user, update_time, del_flag
+      )
+    values (#{id,jdbcType=VARCHAR}, #{residentId,jdbcType=VARCHAR}, #{incomeCategory,jdbcType=VARCHAR}, 
+      #{money,jdbcType=DECIMAL}, #{noMoney,jdbcType=DECIMAL}, #{reckonInMoney,jdbcType=DECIMAL}, 
+      #{realMoney,jdbcType=DECIMAL}, #{createUser,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{upateUser,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP}, #{delFlag,jdbcType=CHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.recon.community.entity.CivilMonthIncome" >
+    insert into civil_month_income
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="residentId != null" >
+        resident_id,
+      </if>
+      <if test="incomeCategory != null" >
+        income_category,
+      </if>
+      <if test="money != null" >
+        money,
+      </if>
+      <if test="noMoney != null" >
+        no_money,
+      </if>
+      <if test="reckonInMoney != null" >
+        reckon_in_money,
+      </if>
+      <if test="realMoney != null" >
+        real_money,
+      </if>
+      <if test="createUser != null" >
+        create_user,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="upateUser != null" >
+        upate_user,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+      <if test="delFlag != null" >
+        del_flag,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="residentId != null" >
+        #{residentId,jdbcType=VARCHAR},
+      </if>
+      <if test="incomeCategory != null" >
+        #{incomeCategory,jdbcType=VARCHAR},
+      </if>
+      <if test="money != null" >
+        #{money,jdbcType=DECIMAL},
+      </if>
+      <if test="noMoney != null" >
+        #{noMoney,jdbcType=DECIMAL},
+      </if>
+      <if test="reckonInMoney != null" >
+        #{reckonInMoney,jdbcType=DECIMAL},
+      </if>
+      <if test="realMoney != null" >
+        #{realMoney,jdbcType=DECIMAL},
+      </if>
+      <if test="createUser != null" >
+        #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="upateUser != null" >
+        #{upateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="delFlag != null" >
+        #{delFlag,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.recon.community.entity.CivilMonthIncome" >
+    update civil_month_income
+    <set >
+      <if test="residentId != null" >
+        resident_id = #{residentId,jdbcType=VARCHAR},
+      </if>
+      <if test="incomeCategory != null" >
+        income_category = #{incomeCategory,jdbcType=VARCHAR},
+      </if>
+      <if test="money != null" >
+        money = #{money,jdbcType=DECIMAL},
+      </if>
+      <if test="noMoney != null" >
+        no_money = #{noMoney,jdbcType=DECIMAL},
+      </if>
+      <if test="reckonInMoney != null" >
+        reckon_in_money = #{reckonInMoney,jdbcType=DECIMAL},
+      </if>
+      <if test="realMoney != null" >
+        real_money = #{realMoney,jdbcType=DECIMAL},
+      </if>
+      <if test="createUser != null" >
+        create_user = #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="upateUser != null" >
+        upate_user = #{upateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="delFlag != null" >
+        del_flag = #{delFlag,jdbcType=CHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.recon.community.entity.CivilMonthIncome" >
+    update civil_month_income
+    set resident_id = #{residentId,jdbcType=VARCHAR},
+      income_category = #{incomeCategory,jdbcType=VARCHAR},
+      money = #{money,jdbcType=DECIMAL},
+      no_money = #{noMoney,jdbcType=DECIMAL},
+      reckon_in_money = #{reckonInMoney,jdbcType=DECIMAL},
+      real_money = #{realMoney,jdbcType=DECIMAL},
+      create_user = #{createUser,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      upate_user = #{upateUser,jdbcType=VARCHAR},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      del_flag = #{delFlag,jdbcType=CHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+
+  <select id="listIncome" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from civil_month_income
+    where resident_id = #{residentsId}
+    and del_flag = 0
+  </select>
+
+  <update id="deleteIncome">
+    update civil_month_income set del_flag=1 where id=#{id}
+  </update>
+</mapper>

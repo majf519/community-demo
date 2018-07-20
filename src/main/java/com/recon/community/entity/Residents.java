@@ -24,24 +24,31 @@ public class Residents {
     @TableField(value = "household_address")
     private String householdAddress;
 
-
+    @TableField(value = "domicile_number")
     private String domicileNumber;
 
     @TableField(value = "domicile_address")
     private String domicileAddress;
 
+    @TableField(value ="company")
     private String company;
 
+    @TableField(value ="division_unit")
     private String divisionUnit;
 
+    @TableField(value ="marriage_status")
     private String marriageStatus;
 
+    @TableField(value ="division_unit")
     private String marriageNo;
 
+    @TableField(value ="marriage_date")
     private Date marriageDate;
 
+    @TableField(value ="political_status")
     private String politicalStatus;
 
+    @TableField(value ="is_foreign")
     private String isForeign;
 
     @TableField(value = "id_card")
@@ -50,38 +57,52 @@ public class Residents {
     @TableField(value = "contact_phone")
     private String contactPhone;
 
+    @TableField(value ="native_place")
     private String nativePlace;
 
+    @TableField(value ="zip_code")
     private String zipCode;
 
+    @TableField(value ="remark")
     private String remark;
 
+    @TableField(value ="household_relation")
     private String householdRelation;
 
+    @TableField(value ="person_type")
     private String personType;
 
     @TableField(value = "education_level")
     private String educationLevel;
 
+    @TableField(value ="is_only")
     private String isOnly;
 
+    @TableField(value ="household_register")
     private String householdRegister;
 
+    @TableField(value ="company_register")
     private String companyRegister;
 
+    @TableField(value ="household_code")
     private String householdCode;
 
+    @TableField(value ="household_number")
     private String householdNumber;
 
+    @TableField(value ="is_violation")
     private String isViolation;
 
+    @TableField(value ="husband_id")
     private String husbandId;
 
     @TableField(value = "social_security_code")
     private String socialSecurityCode;
 
+    @TableField(value ="social_security_address")
     private String socialSecurityAddress;
 
+    @TableField(value ="manage_code")
     private String manageCode;
 
     @TableField(value = "national")
@@ -90,45 +111,64 @@ public class Residents {
     @TableField(value = "family_num")
     private Integer familyNum;
 
+    @TableField(value ="professional_type")
     private String professionalType;
 
+    @TableField(value ="update_time")
     private Date updateTime;
 
+    @TableField(value ="create_time")
     private Date createTime;
 
+    @TableField(value ="create_user")
     private String createUser;
 
+    @TableField(value ="del_flag")
     private String delFlag;
 
+    @TableField(value ="residential_code")
     private String residentialCode;
 
+    @TableField(value ="house_code")
     private String houseCode;
 
+    @TableField(value ="work_status")
     private String workStatus;
 
+    @TableField(value ="labor_ability")
     private String laborAbility;
 
+    @TableField(value ="health")
     private String health;
 
+    @TableField(value ="serious_disease")
     private String seriousDisease;
 
+    @TableField(value ="disablity_syndrome")
     private String disablitySyndrome;
 
+    @TableField(value ="disability_category")
     private String disabilityCategory;
 
+    @TableField(value ="disability_grade")
     private String disabilityGrade;
 
+    @TableField(value ="specific_salvation")
     private String specificSalvation;
 
+    @TableField(value ="academic_status")
     private String academicStatus;
 
     @TableField(value = "relationship_applicant")
     private String relationshipApplicant;
 
+    @TableField(value ="is_supplied")
     private String isSupplied;
 
+    @TableField(value ="is_be_supplied")
     private String isBeSupplied;
 
+    @TableField(value ="update_user")
     private String updateUser;
 
     public Residents(String id, String name, String gender, Date birthday, String householdAddress, String domicileNumber, String domicileAddress, String company, String divisionUnit, String marriageStatus, String marriageNo, Date marriageDate, String politicalStatus, String isForeign, String idCard, String contactPhone, String nativePlace, String zipCode, String remark, String householdRelation, String personType, String educationLevel, String isOnly, String householdRegister, String companyRegister, String householdCode, String householdNumber, String isViolation, String husbandId, String socialSecurityCode, String socialSecurityAddress, String manageCode, String national, String professionalType, Date updateTime, Date createTime, String createUser, String delFlag, String residentialCode, String houseCode, String workStatus, String laborAbility, String health, String seriousDisease, String disablitySyndrome, String disabilityCategory, String disabilityGrade, String specificSalvation, String academicStatus, String relationshipApplicant, String isSupplied, String isBeSupplied, String updateUser,Integer familyNum) {
