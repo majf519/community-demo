@@ -7,7 +7,9 @@ import com.recon.community.util.UuidUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import redis.clients.jedis.Jedis;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -35,6 +37,11 @@ public class CivilMonthIncomeServiceImpl implements CivilMonthIncomeService{
     public void addIncome(CivilMonthIncome civilMonthIncome) {
         String id = UuidUtil.getUuid();
         civilMonthIncome.setId(id);
+        civilMonthIncome.setCreateTime(new Date());
+        civilMonthIncome.setCreateUser(civilMonthIncome.getResidentId());
+        civilMonthIncome.setUpateUser(civilMonthIncome.getResidentId());
+        civilMonthIncome.setDelFlag("0");
+        civilMonthIncome.setUpdateTime(new Date());
         civilMonthIncomeMapper.insert(civilMonthIncome);
     }
 
@@ -47,4 +54,5 @@ public class CivilMonthIncomeServiceImpl implements CivilMonthIncomeService{
     public void deleteIncome(String id) {
         civilMonthIncomeMapper.deleteIncome(id);
     }
+
 }

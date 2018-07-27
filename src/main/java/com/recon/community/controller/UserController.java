@@ -81,7 +81,7 @@ public class UserController {
         return result;
     }
 
-    @PutMapping("add/")
+    @PostMapping("add/")
     @ApiOperation(value = "添加用户",notes = "添加用户", produces = MediaType.APPLICATION_JSON_VALUE)
     public OptResult addUser(@RequestBody Residents residents) {
         logger.info("添加用户 residents:" + JSONObject.toJSONString(residents));

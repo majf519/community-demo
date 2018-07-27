@@ -27,4 +27,12 @@ public interface ResidentsMapper extends BaseMapper<Residents> {
      * @param id
      */
     void deleteUser(@Param("id") String id);
+
+    /**
+     * 根据居民身份证号获取基本信息
+     *
+     * @param idCard
+     * @return
+     */
+    Residents getResidentsByIdCard(@Param("idCard") String idCard);
 }

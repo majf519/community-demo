@@ -33,4 +33,8 @@ public class ResidentsServiceImpl extends ServiceImpl<ResidentsMapper, Residents
     @Autowired
     private ResidentsMapper residentsMapper;
 
+    @Override
+    public Residents getResidentsByIdCard(String idCard) {
+        return residentsMapper.getResidentsByIdCard(idCard);
+    }
 }

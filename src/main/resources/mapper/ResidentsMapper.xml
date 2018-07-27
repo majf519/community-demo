@@ -674,4 +674,12 @@
     <update id="deleteUser">
         update family_residents set del_flag = '1' where id = #{id}
     </update>
+
+    <select id="getResidentsByIdCard" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"></include>
+        from family_residents t
+        where del_flag = '0'
+        and t.id_card = #{idCard}
+    </select>
 </mapper>

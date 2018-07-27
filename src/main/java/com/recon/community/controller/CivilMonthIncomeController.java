@@ -1,7 +1,6 @@
 package com.recon.community.controller;
 
 import com.recon.community.entity.CivilMonthIncome;
-import com.recon.community.entity.Residents;
 import com.recon.community.service.CivilMonthIncomeService;
 import com.recon.core.vo.OptResult;
 import io.swagger.annotations.Api;
@@ -25,12 +24,12 @@ public class CivilMonthIncomeController {
     @Autowired
     private CivilMonthIncomeService civilMonthIncomeService;
 
-    @GetMapping("list")
+    @GetMapping("list/{id}")
     @ApiOperation(value = "根据居民id获取月收入信息",notes = "根据居民id获取月收入信息", produces = MediaType.APPLICATION_JSON_VALUE)
-    @ApiImplicitParam(name = "residentsId", value = "居民id", paramType = "query", dataType = "String", required = true)
-    public OptResult listIncome(@RequestParam String residentsId) {
+    @ApiImplicitParam(name = "id", value = "居民id", paramType = "path", dataType = "String", required = true)
+    public OptResult listIncome(@PathVariable String id) {
         OptResult result = new OptResult();
-        List<CivilMonthIncome> civilMonthIncomeList = civilMonthIncomeService.listIncome(residentsId);
+        List<CivilMonthIncome> civilMonthIncomeList = civilMonthIncomeService.listIncome(id);
         result.setBody(civilMonthIncomeList);
         return result;
     }
