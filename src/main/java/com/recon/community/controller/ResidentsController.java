@@ -8,10 +8,7 @@ import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author daniel.xue
@@ -31,6 +28,16 @@ public class ResidentsController {
     public OptResult getResidents(@PathVariable String id) {
         OptResult result = new OptResult();
         Residents residents = residentsService.selectById(id);
+        result.setBody(residents);
+        return result;
+    }
+
+    @ApiOperation(value = "根据居民身份证号获取居民信息", notes = "根据居民身份证号获取居民信息", produces = MediaType.APPLICATION_JSON_VALUE)
+    @ApiImplicitParam(name = "idCard", value = "身份证号", paramType = "query", dataType = "String", required = true)
+    @GetMapping(value = "/get")
+    public OptResult getResidentsByIdCard(@RequestParam String idCard) {
+        OptResult result = new OptResult();
+        Residents residents = residentsService.getResidentsByIdCard(idCard);
         result.setBody(residents);
         return result;
     }

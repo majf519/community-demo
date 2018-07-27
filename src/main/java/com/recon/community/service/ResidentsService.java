@@ -14,5 +14,11 @@ import java.util.List;
  **/
 public interface ResidentsService extends IService<Residents> {
 
-
+    /**
+     * 根据居民身份证号获取居民信息
+     *
+     * @param idCard
+     * @return
+     */
+    Residents getResidentsByIdCard(String idCard);
 }
