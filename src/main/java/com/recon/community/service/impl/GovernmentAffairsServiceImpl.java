@@ -29,6 +29,8 @@ public class GovernmentAffairsServiceImpl extends ServiceImpl<GovernmentAffairsM
             GovernmentAffairsVO governmentAffairsResult = new GovernmentAffairsVO();
             governmentAffairsResult.setBusinessName("社会保障");
             governmentAffairsResult.setBusinessType("40、50人员社会救济金申请");
+            governmentAffairsResult.setId(governmentAffairsList.get(i).getId());
+            governmentAffairsResult.setResidentId(governmentAffairsList.get(i).getResidentId());
             governmentAffairsResult.setName(governmentAffairsList.get(i).getName());
             governmentAffairsResult.setCreateTime(governmentAffairsList.get(i).getCreateTime());
             governmentAffairsResult.setBusinessStatus(governmentAffairsList.get(i).getStatus());
