@@ -52,6 +52,11 @@ public class GovernmentAffairs {
     @TableField(value="del_flag")
     private String delFlag;
 
+    private String name;
+
+    @TableField(value="status")
+    private String status;
+
     public String getId() {
         return id;
     }
@@ -162,5 +167,21 @@ public class GovernmentAffairs {
 
     public void setDelFlag(String delFlag) {
         this.delFlag = delFlag;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }
