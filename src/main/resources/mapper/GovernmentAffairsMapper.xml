@@ -68,6 +68,25 @@
         f.name
     </sql>
 
+    <sql id="GovernmentAffairs_Info_Column_List">
+        t.id,
+        t.resident_id,
+        t.withdrawal_time,
+        t.expropriation_time,
+        t.expropriation_unit,
+        t.unemployment_time,
+        t.remedies_type,
+        t.relief_reason,
+        t.status,
+        t.create_unit,
+        t.create_user,
+        t.create_time,
+        t.update_user,
+        t.update_time,
+        t.del_flag,
+        f.name
+    </sql>
+
     <sql id="GuideConfiguration_Base_Column_List">
         t.id,
         t.business_name,
@@ -100,6 +119,13 @@
    <!--      <if test="businessName!=null">
             AND t. LIKE '%${businessName}%'
         </if>  -->
+    </select>
+
+    <select id="getGovernmentAffairsInfoById" parameterType="String" resultMap="GovernmentAffairsResultMap">
+        SELECT
+        <include refid="GovernmentAffairs_Info_Column_List"></include>
+        FROM civil_alms_apply t  left join  family_residents f ON  t.resident_id = f.id
+        WHERE t.id =  #{_parameter}
     </select>
 
     <select id="getGuideConfigurationList" parameterType="com.recon.community.vo.GovernmentAffairsVO" resultMap="GuideConfigurationResultMap">

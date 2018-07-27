@@ -12,6 +12,8 @@ public interface GovernmentAffairsMapper extends BaseMapper<GovernmentAffairs>{
 
     List<GovernmentAffairs> getGovernmentAffairsList(GovernmentAffairsVO businessVO);
 
+    GovernmentAffairs getGovernmentAffairsInfoById(String id);
+
     List<GuideConfiguration> getGuideConfigurationList(String id);
 
     List<GuideTitleItem> getGuideTitleItemList(String guideConfigurationNo);

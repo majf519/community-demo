@@ -6,6 +6,7 @@ import com.recon.community.service.GovernmentAffairsService;
 import com.recon.community.vo.GovernmentAffairsVO;
 import com.recon.core.vo.OptResult;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -36,8 +37,20 @@ public class GovernmentAffairsController {
         governmentAffairsVO.setBusinessName(businessName);
         governmentAffairsVO.setBusinessType(businessType);
         OptResult result = new OptResult();
-        List<GovernmentAffairs> governmentAffairsList= governmentAffairsService.getGovernmentAffairsList(governmentAffairsVO);
+        List<GovernmentAffairsVO> governmentAffairsList= governmentAffairsService.getGovernmentAffairsList(governmentAffairsVO);
         result.setBody(governmentAffairsList);
+
+        return result;
+    }
+
+    @GetMapping("governmentAffairsInfo/{id}")
+    @ApiOperation(value = "救济金申请详情",notes = "救济金申请详情", produces = MediaType.APPLICATION_JSON_VALUE)
+    @ApiImplicitParam(name = "id", value = "救济金申请id", paramType = "path", dataType = "String", required = true)
+    public OptResult governmentAffairsInfoById(@PathVariable String id){
+        logger.info("救济金申请详情");
+        OptResult result = new OptResult();
+        GovernmentAffairs governmentAffairsInfo= governmentAffairsService.getGovernmentAffairsInfoById(id);
+        result.setBody(governmentAffairsInfo);
 
         return result;
     }

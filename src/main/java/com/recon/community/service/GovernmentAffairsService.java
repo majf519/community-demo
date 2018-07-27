@@ -9,7 +9,9 @@ import java.util.List;
 
 public interface GovernmentAffairsService extends IService<GovernmentAffairs> {
 
-    List<GovernmentAffairs> getGovernmentAffairsList(GovernmentAffairsVO governmentAffairsVO);
+    List<GovernmentAffairsVO> getGovernmentAffairsList(GovernmentAffairsVO governmentAffairsVO);
+
+    GovernmentAffairs getGovernmentAffairsInfoById(String id);
 
     List<GuideConfiguration> getGuideConfigurationList(String id);
 }

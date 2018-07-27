@@ -10,6 +10,7 @@ import com.recon.community.vo.GovernmentAffairsVO;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -17,9 +18,21 @@ import java.util.List;
 public class GovernmentAffairsServiceImpl extends ServiceImpl<GovernmentAffairsMapper, GovernmentAffairs> implements GovernmentAffairsService {
 
     @Override
-    public List<GovernmentAffairs> getGovernmentAffairsList(GovernmentAffairsVO governmentAffairsVO){
+    public List<GovernmentAffairsVO> getGovernmentAffairsList(GovernmentAffairsVO governmentAffairsVO){
 
-        return baseMapper.getGovernmentAffairsList(governmentAffairsVO);
+        List<GovernmentAffairs> governmentAffairs =  baseMapper.getGovernmentAffairsList(governmentAffairsVO);
+
+        List<GovernmentAffairsVO> governmentAffairsList = new ArrayList<GovernmentAffairsVO>();
+
+        return governmentAffairsList;
+
+
+    }
+
+    @Override
+    public GovernmentAffairs getGovernmentAffairsInfoById(String id){
+
+        return baseMapper.getGovernmentAffairsInfoById(id);
     }
 
     @Override

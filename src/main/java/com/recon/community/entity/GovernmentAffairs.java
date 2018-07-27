@@ -34,6 +34,9 @@ public class GovernmentAffairs {
     @TableField(value="relief_reason")
     private String reliefReason;
 
+    @TableField(value="status")
+    private String status;
+
     @TableField(value="create_unit")
     private String createUnit;
 
@@ -53,9 +56,6 @@ public class GovernmentAffairs {
     private String delFlag;
 
     private String name;
-
-    @TableField(value="status")
-    private String status;
 
     public String getId() {
         return id;
@@ -121,6 +121,14 @@ public class GovernmentAffairs {
         this.reliefReason = reliefReason;
     }
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
     public String getCreateUnit() {
         return createUnit;
     }
@@ -175,13 +183,5 @@ public class GovernmentAffairs {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
     }
 }
