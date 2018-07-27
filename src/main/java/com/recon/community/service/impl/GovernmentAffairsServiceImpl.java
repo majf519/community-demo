@@ -20,13 +20,24 @@ public class GovernmentAffairsServiceImpl extends ServiceImpl<GovernmentAffairsM
     @Override
     public List<GovernmentAffairsVO> getGovernmentAffairsList(GovernmentAffairsVO governmentAffairsVO){
 
-        List<GovernmentAffairs> governmentAffairs =  baseMapper.getGovernmentAffairsList(governmentAffairsVO);
+        List<GovernmentAffairs> governmentAffairsList =  baseMapper.getGovernmentAffairsList(governmentAffairsVO);
 
-        List<GovernmentAffairsVO> governmentAffairsList = new ArrayList<GovernmentAffairsVO>();
+        List<GovernmentAffairsVO> governmentAffairsResultList = new ArrayList<GovernmentAffairsVO>();
 
-        return governmentAffairsList;
+        for(int i=0; i < governmentAffairsList.size(); i++ ){
 
+            GovernmentAffairsVO governmentAffairsResult = new GovernmentAffairsVO();
+            governmentAffairsResult.setBusinessName("社会保障");
+            governmentAffairsResult.setBusinessType("40、50人员社会救济金申请");
+            governmentAffairsResult.setName(governmentAffairsList.get(i).getName());
+            governmentAffairsResult.setCreateTime(governmentAffairsList.get(i).getCreateTime());
+            governmentAffairsResult.setBusinessStatus(governmentAffairsList.get(i).getStatus());
 
+            governmentAffairsResultList.add(governmentAffairsResult);
+
+        }
+
+        return governmentAffairsResultList;
     }
 
     @Override
