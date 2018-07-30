@@ -105,8 +105,21 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
 
     @Override
     public void addUser(Residents residents) {
-        String id = UuidUtil.getUuid();
-        residents.setId(id);
+        if(StringUtils.isNotBlank(residents.getId())){
+           Residents residents1 =  residentsMapper.selectById(residents.getId());
+            if(residents1!=null){
+                residents1.setHouseCode(residents.getHouseCode());
+                residentsMapper.updateByPrimaryKey(residents1);
+                return;
+            }
+            String id = UuidUtil.getUuid();
+            residents.setId(id);
+            residentsMapper.insert(residents);
+            return;
+        }
+        String uuid = UuidUtil.getUuid();
+        residents.setId(uuid);
         residentsMapper.insert(residents);
+
     }
 }

@@ -2,7 +2,10 @@ package com.recon.community.controller;
 
 import com.recon.community.entity.GovernmentAffairs;
 import com.recon.community.entity.GuideConfiguration;
+import com.recon.community.entity.Residents;
 import com.recon.community.service.GovernmentAffairsService;
+import com.recon.community.vo.ApplyStatusVO;
+import com.recon.community.vo.ApplyVO;
 import com.recon.community.vo.GovernmentAffairsVO;
 import com.recon.core.vo.OptResult;
 import io.swagger.annotations.Api;
@@ -65,4 +68,24 @@ public class GovernmentAffairsController {
         result.setBody(guideConfigurationList);
         return result;
     }
+
+    @ApiOperation(value = "添加救济金申请", notes = "添加救济金申请", produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "addGuideConfiguration")
+    public OptResult addGuideConfiguration(@RequestBody ApplyVO applyVO){
+        logger.info("添加救济金申请");
+        governmentAffairsService.addGuideConfiguration(applyVO);
+        OptResult result = new OptResult();
+        return result;
+    }
+
+    @ApiOperation(value = "修改申请状态", notes = "修改申请状态", produces = MediaType.APPLICATION_JSON_VALUE)
+    @PutMapping(value = "addGuideConfiguration")
+    public OptResult updateApplyStatus(@RequestBody ApplyStatusVO applyStatusVO){
+        logger.info("修改申请状态");
+        governmentAffairsService.updateApplyStatus(applyStatusVO);
+        OptResult result = new OptResult();
+        return result;
+    }
+
+
 }

@@ -26,7 +26,7 @@ public class GovernmentAffairs {
     private String expropriationUnit;
 
     @TableField(value="unemployment_time")
-    private String unemploymentTime;
+    private Date unemploymentTime;
 
     @TableField(value="remedies_type")
     private String remediesType;
@@ -55,6 +55,7 @@ public class GovernmentAffairs {
     @TableField(value="del_flag")
     private String delFlag;
 
+    @TableField(exist = false)
     private String name;
 
     public String getId() {
@@ -97,11 +98,11 @@ public class GovernmentAffairs {
         this.expropriationUnit = expropriationUnit;
     }
 
-    public String getUnemploymentTime() {
+    public Date getUnemploymentTime() {
         return unemploymentTime;
     }
 
-    public void setUnemploymentTime(String unemploymentTime) {
+    public void setUnemploymentTime(Date unemploymentTime) {
         this.unemploymentTime = unemploymentTime;
     }
 

@@ -17,7 +17,7 @@ import java.util.List;
  * @create 2018/7/19
  **/
 @Service
-@Transactional
+@Transactional(rollbackFor = Throwable.class)
 public class CivilMonthIncomeServiceImpl implements CivilMonthIncomeService{
 
     @Autowired
