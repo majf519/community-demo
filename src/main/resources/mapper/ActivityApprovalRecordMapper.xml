@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.recon.community.mapper.ActivityApprovalRecordMapper" >
+  <resultMap id="BaseResultMap" type="com.recon.community.entity.ActivityApprovalRecord" >
+    <constructor >
+      <idArg column="id" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="acitivity_id" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="sender" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="sender_role" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="receiver" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="type" jdbcType="CHAR" javaType="java.lang.String" />
+      <arg column="result" jdbcType="CHAR" javaType="java.lang.String" />
+      <arg column="processing_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="remark" jdbcType="VARCHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, acitivity_id, sender, sender_role, receiver, type, result, processing_time, remark
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from housekeeping_activity_approval_record
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from housekeeping_activity_approval_record
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.recon.community.entity.ActivityApprovalRecord" >
+    insert into housekeeping_activity_approval_record (id, acitivity_id, sender, 
+      sender_role, receiver, type, 
+      result, processing_time, remark
+      )
+    values (#{id,jdbcType=VARCHAR}, #{acitivityId,jdbcType=VARCHAR}, #{sender,jdbcType=VARCHAR}, 
+      #{senderRole,jdbcType=VARCHAR}, #{receiver,jdbcType=VARCHAR}, #{type,jdbcType=CHAR}, 
+      #{result,jdbcType=CHAR}, #{processingTime,jdbcType=TIMESTAMP}, #{remark,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.recon.community.entity.ActivityApprovalRecord" >
+    insert into housekeeping_activity_approval_record
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="acitivityId != null" >
+        acitivity_id,
+      </if>
+      <if test="sender != null" >
+        sender,
+      </if>
+      <if test="senderRole != null" >
+        sender_role,
+      </if>
+      <if test="receiver != null" >
+        receiver,
+      </if>
+      <if test="type != null" >
+        type,
+      </if>
+      <if test="result != null" >
+        result,
+      </if>
+      <if test="processingTime != null" >
+        processing_time,
+      </if>
+      <if test="remark != null" >
+        remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="acitivityId != null" >
+        #{acitivityId,jdbcType=VARCHAR},
+      </if>
+      <if test="sender != null" >
+        #{sender,jdbcType=VARCHAR},
+      </if>
+      <if test="senderRole != null" >
+        #{senderRole,jdbcType=VARCHAR},
+      </if>
+      <if test="receiver != null" >
+        #{receiver,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=CHAR},
+      </if>
+      <if test="result != null" >
+        #{result,jdbcType=CHAR},
+      </if>
+      <if test="processingTime != null" >
+        #{processingTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.recon.community.entity.ActivityApprovalRecord" >
+    update housekeeping_activity_approval_record
+    <set >
+      <if test="acitivityId != null" >
+        acitivity_id = #{acitivityId,jdbcType=VARCHAR},
+      </if>
+      <if test="sender != null" >
+        sender = #{sender,jdbcType=VARCHAR},
+      </if>
+      <if test="senderRole != null" >
+        sender_role = #{senderRole,jdbcType=VARCHAR},
+      </if>
+      <if test="receiver != null" >
+        receiver = #{receiver,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        type = #{type,jdbcType=CHAR},
+      </if>
+      <if test="result != null" >
+        result = #{result,jdbcType=CHAR},
+      </if>
+      <if test="processingTime != null" >
+        processing_time = #{processingTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.recon.community.entity.ActivityApprovalRecord" >
+    update housekeeping_activity_approval_record
+    set acitivity_id = #{acitivityId,jdbcType=VARCHAR},
+      sender = #{sender,jdbcType=VARCHAR},
+      sender_role = #{senderRole,jdbcType=VARCHAR},
+      receiver = #{receiver,jdbcType=VARCHAR},
+      type = #{type,jdbcType=CHAR},
+      result = #{result,jdbcType=CHAR},
+      processing_time = #{processingTime,jdbcType=TIMESTAMP},
+      remark = #{remark,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

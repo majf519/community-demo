@@ -50,7 +50,12 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         }
         String token = "token";
         userMapper.setTokenById(user.getId(), token);
+        // 存储用户登陆id
         redisTemplateUtil.set(token, user.getId());
+        // 获取用户的对应的居民id
+        // todo
+        // 存储用户对应的居民id
+        redisTemplateUtil.set("residentsId",user.getResidentsId());
         user.setToken(token);
         String id = UuidUtil.getUuid();
         Operation operation = new Operation(id, user.getId(), "用户模块", "用户登陆", new Date(), "0");
@@ -120,6 +125,5 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         String uuid = UuidUtil.getUuid();
         residents.setId(uuid);
         residentsMapper.insert(residents);
-
     }
 }

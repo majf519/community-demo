@@ -1,5 +1,6 @@
 package com.recon.community.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import com.recon.community.entity.Evaluation;
 import com.recon.community.service.EvaluationService;
 import com.recon.core.vo.OptResult;
@@ -34,7 +35,7 @@ public class EvaluationController {
     @ApiOperation(value = "添加评价",notes = "添加评价")
     @PostMapping("/")
     public OptResult addEvaluation(@RequestBody Evaluation evaluation){
-        logger.info("添加评价");
+        logger.info("添加评价 evaluation:"+ JSONObject.toJSONString(evaluation));
         OptResult optResult = new OptResult();
         evaluationService.addEvaluation(evaluation);
         return optResult;

@@ -31,8 +31,8 @@ public class Annex {
     @TableField(value ="filename" )
     private String filename;
 
-    @TableField(value = "update_time")
-    private Date updateTime;
+    @TableField(value = "upload_time")
+    private Date uploadTime;
 
     public String getId() {
         return id;
@@ -82,11 +82,11 @@ public class Annex {
         this.filename = filename;
     }
 
-    public Date getUpdateTime() {
-        return updateTime;
+    public Date getUploadTime() {
+        return uploadTime;
     }
 
-    public void setUpdateTime(Date updateTime) {
-        this.updateTime = updateTime;
+    public void setUploadTime(Date uploadTime) {
+        this.uploadTime = uploadTime;
     }
 }

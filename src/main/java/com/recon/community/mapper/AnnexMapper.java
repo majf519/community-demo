@@ -18,13 +18,13 @@ public interface AnnexMapper extends BaseMapper<Annex> {
             "        file_upload_path fileUploadPath,\n" +
             "        title,\n" +
             "        filename,\n" +
-            "        update_time updateTime\n" +
+            "        upload_time uploadTime\n" +
             "FROM community_upload_file c\n" +
             "WHERE del_flag = '0'\n" +
             "        AND relation_no = #{id}")
     List<Annex> listAnnex(String id);
 
-    @Update("UPDATE community_upload_file SET filename = null, file_upload_path = null,update_time = null\n" +
+    @Update("UPDATE community_upload_file SET filename = null, file_upload_path = null,upload_time = null\n" +
             "WHERE del_flag = '0'\n" +
             "        AND id = #{id}")
     void deleteAnnex(String id);

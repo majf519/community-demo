@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.recon.community.mapper.ActivityMapper" >
+  <resultMap id="BaseResultMap" type="com.recon.community.entity.Activity" >
+    <constructor >
+      <idArg column="id" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="name" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="form" jdbcType="CHAR" javaType="java.lang.String" />
+      <arg column="administrative_line" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="theme" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="theme_customize" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="principal" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="before_notice" jdbcType="CHAR" javaType="java.lang.String" />
+      <arg column="site_coordination" jdbcType="CHAR" javaType="java.lang.String" />
+      <arg column="material_preparation" jdbcType="CHAR" javaType="java.lang.String" />
+      <arg column="person_contact" jdbcType="CHAR" javaType="java.lang.String" />
+      <arg column="Information_report" jdbcType="CHAR" javaType="java.lang.String" />
+      <arg column="schedule" jdbcType="CHAR" javaType="java.lang.String" />
+      <arg column="save_status" jdbcType="CHAR" javaType="java.lang.String" />
+      <arg column="address" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="scene_photo" jdbcType="CHAR" javaType="java.lang.String" />
+      <arg column="create_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="create_user" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="update_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="update_user" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="del_flag" jdbcType="CHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, name, form, administrative_line, theme, theme_customize, principal, before_notice, 
+    site_coordination, material_preparation, person_contact, Information_report, schedule, 
+    save_status, address, scene_photo, create_time, create_user, update_time, update_user, 
+    del_flag
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from housekeeping_activity
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from housekeeping_activity
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.recon.community.entity.Activity" >
+    insert into housekeeping_activity (id, name, form, 
+      administrative_line, theme, theme_customize, 
+      principal, before_notice, site_coordination, 
+      material_preparation, person_contact, Information_report, 
+      schedule, save_status, address, 
+      scene_photo, create_time, create_user, 
+      update_time, update_user, del_flag
+      )
+    values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{form,jdbcType=CHAR}, 
+      #{administrativeLine,jdbcType=VARCHAR}, #{theme,jdbcType=VARCHAR}, #{themeCustomize,jdbcType=VARCHAR}, 
+      #{principal,jdbcType=VARCHAR}, #{beforeNotice,jdbcType=CHAR}, #{siteCoordination,jdbcType=CHAR}, 
+      #{materialPreparation,jdbcType=CHAR}, #{personContact,jdbcType=CHAR}, #{informationReport,jdbcType=CHAR}, 
+      #{schedule,jdbcType=CHAR}, #{saveStatus,jdbcType=CHAR}, #{address,jdbcType=VARCHAR}, 
+      #{scenePhoto,jdbcType=CHAR}, #{createTime,jdbcType=TIMESTAMP}, #{createUser,jdbcType=VARCHAR}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{updateUser,jdbcType=VARCHAR}, #{delFlag,jdbcType=CHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.recon.community.entity.Activity" >
+    insert into housekeeping_activity
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="form != null" >
+        form,
+      </if>
+      <if test="administrativeLine != null" >
+        administrative_line,
+      </if>
+      <if test="theme != null" >
+        theme,
+      </if>
+      <if test="themeCustomize != null" >
+        theme_customize,
+      </if>
+      <if test="principal != null" >
+        principal,
+      </if>
+      <if test="beforeNotice != null" >
+        before_notice,
+      </if>
+      <if test="siteCoordination != null" >
+        site_coordination,
+      </if>
+      <if test="materialPreparation != null" >
+        material_preparation,
+      </if>
+      <if test="personContact != null" >
+        person_contact,
+      </if>
+      <if test="informationReport != null" >
+        Information_report,
+      </if>
+      <if test="schedule != null" >
+        schedule,
+      </if>
+      <if test="saveStatus != null" >
+        save_status,
+      </if>
+      <if test="address != null" >
+        address,
+      </if>
+      <if test="scenePhoto != null" >
+        scene_photo,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="createUser != null" >
+        create_user,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+      <if test="updateUser != null" >
+        update_user,
+      </if>
+      <if test="delFlag != null" >
+        del_flag,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="form != null" >
+        #{form,jdbcType=CHAR},
+      </if>
+      <if test="administrativeLine != null" >
+        #{administrativeLine,jdbcType=VARCHAR},
+      </if>
+      <if test="theme != null" >
+        #{theme,jdbcType=VARCHAR},
+      </if>
+      <if test="themeCustomize != null" >
+        #{themeCustomize,jdbcType=VARCHAR},
+      </if>
+      <if test="principal != null" >
+        #{principal,jdbcType=VARCHAR},
+      </if>
+      <if test="beforeNotice != null" >
+        #{beforeNotice,jdbcType=CHAR},
+      </if>
+      <if test="siteCoordination != null" >
+        #{siteCoordination,jdbcType=CHAR},
+      </if>
+      <if test="materialPreparation != null" >
+        #{materialPreparation,jdbcType=CHAR},
+      </if>
+      <if test="personContact != null" >
+        #{personContact,jdbcType=CHAR},
+      </if>
+      <if test="informationReport != null" >
+        #{informationReport,jdbcType=CHAR},
+      </if>
+      <if test="schedule != null" >
+        #{schedule,jdbcType=CHAR},
+      </if>
+      <if test="saveStatus != null" >
+        #{saveStatus,jdbcType=CHAR},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="scenePhoto != null" >
+        #{scenePhoto,jdbcType=CHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null" >
+        #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null" >
+        #{updateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="delFlag != null" >
+        #{delFlag,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.recon.community.entity.Activity" >
+    update housekeeping_activity
+    <set >
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="form != null" >
+        form = #{form,jdbcType=CHAR},
+      </if>
+      <if test="administrativeLine != null" >
+        administrative_line = #{administrativeLine,jdbcType=VARCHAR},
+      </if>
+      <if test="theme != null" >
+        theme = #{theme,jdbcType=VARCHAR},
+      </if>
+      <if test="themeCustomize != null" >
+        theme_customize = #{themeCustomize,jdbcType=VARCHAR},
+      </if>
+      <if test="principal != null" >
+        principal = #{principal,jdbcType=VARCHAR},
+      </if>
+      <if test="beforeNotice != null" >
+        before_notice = #{beforeNotice,jdbcType=CHAR},
+      </if>
+      <if test="siteCoordination != null" >
+        site_coordination = #{siteCoordination,jdbcType=CHAR},
+      </if>
+      <if test="materialPreparation != null" >
+        material_preparation = #{materialPreparation,jdbcType=CHAR},
+      </if>
+      <if test="personContact != null" >
+        person_contact = #{personContact,jdbcType=CHAR},
+      </if>
+      <if test="informationReport != null" >
+        Information_report = #{informationReport,jdbcType=CHAR},
+      </if>
+      <if test="schedule != null" >
+        schedule = #{schedule,jdbcType=CHAR},
+      </if>
+      <if test="saveStatus != null" >
+        save_status = #{saveStatus,jdbcType=CHAR},
+      </if>
+      <if test="address != null" >
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="scenePhoto != null" >
+        scene_photo = #{scenePhoto,jdbcType=CHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null" >
+        create_user = #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null" >
+        update_user = #{updateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="delFlag != null" >
+        del_flag = #{delFlag,jdbcType=CHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.recon.community.entity.Activity" >
+    update housekeeping_activity
+    set name = #{name,jdbcType=VARCHAR},
+      form = #{form,jdbcType=CHAR},
+      administrative_line = #{administrativeLine,jdbcType=VARCHAR},
+      theme = #{theme,jdbcType=VARCHAR},
+      theme_customize = #{themeCustomize,jdbcType=VARCHAR},
+      principal = #{principal,jdbcType=VARCHAR},
+      before_notice = #{beforeNotice,jdbcType=CHAR},
+      site_coordination = #{siteCoordination,jdbcType=CHAR},
+      material_preparation = #{materialPreparation,jdbcType=CHAR},
+      person_contact = #{personContact,jdbcType=CHAR},
+      Information_report = #{informationReport,jdbcType=CHAR},
+      schedule = #{schedule,jdbcType=CHAR},
+      save_status = #{saveStatus,jdbcType=CHAR},
+      address = #{address,jdbcType=VARCHAR},
+      scene_photo = #{scenePhoto,jdbcType=CHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      create_user = #{createUser,jdbcType=VARCHAR},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      update_user = #{updateUser,jdbcType=VARCHAR},
+      del_flag = #{delFlag,jdbcType=CHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+
+  <!--综合查询活动项目-->
+  <select id="listActivity" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from housekeeping_activity
+    where del_flag = '0'
+    <if test="name != null" >
+      and name = #{name}
+    </if>
+    <if test="administrativeLine != null" >
+      and administrative_line =  #{administrativeLine}
+    </if>
+    <if test="form != null" >
+      and form = #{form}
+    </if>
+    <if test="saveStatus != null" >
+      and save_status = #{saveStatus}
+    </if>
+  </select>
+
+  <!--删除活动项目-->
+  <update id="deleteActivity">
+    update housekeeping_activity set del_flag = '1'
+    where id = #{id}
+  </update>
+
+  <!--修改活动项目的活动状态-->
+  <update id="updateActivitySaveStatus">
+    update housekeeping_activity set save_status = #{saveStatus}
+    where id = #{id} and del_flag = '0'
+  </update>
+
+  <!--修改活动项目的进度-->
+  <update id="updateActivitySchedule">
+    update housekeeping_activity set schedule = #{schedule}
+    where id = #{id} and del_flag = '0'
+  </update>
+</mapper>

@@ -86,6 +86,12 @@ public class GovernmentAffairsServiceImpl extends ServiceImpl<GovernmentAffairsM
             applyVO.setResidentId(uuid);
             BeanUtils.copyProperties(applyVO, residents);
             residents.setId(applyVO.getResidentId());
+            residents.setDelFlag("0");
+            if(StringUtils.isBlank(residents.getHouseCode())){
+                // 创建新的家庭
+                // todo
+                residents.setHouseCode("8462b31e930e425598a437ffd7f26e38");
+            }
             residentsService.insert(residents);
         }
         BeanUtils.copyProperties(applyVO, governmentAffairs);

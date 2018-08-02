@@ -1,16 +1,22 @@
 package com.recon.community.vo;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
 /**
  * @author daniel.xue
  * @create 2018/7/28
  **/
+@ApiModel(value = "ApplyStatusVO",description = "审核VO")
 public class ApplyStatusVO {
 
+    @ApiModelProperty(value = "审核项目id")
     private String id;
 
-
+    @ApiModelProperty(value = "审核状态 (0  同意  1 拒绝 )")
     private String status;
 
+    @ApiModelProperty(value = "审核拒绝原因")
     private String reason;
 
     public String getId() {

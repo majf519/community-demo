@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.recon.community.mapper.NewsEvaluationMapper" >
+  <resultMap id="BaseResultMap" type="com.recon.community.entity.NewsEvaluation" >
+    <constructor >
+      <idArg column="id" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="news_id" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="evaluation_user" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="evaluation_content" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="evaluation_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="parent_id" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="update_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="update_user" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="del_flag" jdbcType="CHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, news_id, evaluation_user, evaluation_content, evaluation_time, parent_id, update_time, 
+    update_user, del_flag
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from housekeeping_news_evaluation
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from housekeeping_news_evaluation
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.recon.community.entity.NewsEvaluation" >
+    insert into housekeeping_news_evaluation (id, news_id, evaluation_user, 
+      evaluation_content, evaluation_time, parent_id, 
+      update_time, update_user, del_flag
+      )
+    values (#{id,jdbcType=VARCHAR}, #{newsId,jdbcType=VARCHAR}, #{evaluationUser,jdbcType=VARCHAR}, 
+      #{evaluationContent,jdbcType=VARCHAR}, #{evaluationTime,jdbcType=TIMESTAMP}, #{parentId,jdbcType=VARCHAR}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{updateUser,jdbcType=VARCHAR}, #{delFlag,jdbcType=CHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.recon.community.entity.NewsEvaluation" >
+    insert into housekeeping_news_evaluation
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="newsId != null" >
+        news_id,
+      </if>
+      <if test="evaluationUser != null" >
+        evaluation_user,
+      </if>
+      <if test="evaluationContent != null" >
+        evaluation_content,
+      </if>
+      <if test="evaluationTime != null" >
+        evaluation_time,
+      </if>
+      <if test="parentId != null" >
+        parent_id,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+      <if test="updateUser != null" >
+        update_user,
+      </if>
+      <if test="delFlag != null" >
+        del_flag,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="newsId != null" >
+        #{newsId,jdbcType=VARCHAR},
+      </if>
+      <if test="evaluationUser != null" >
+        #{evaluationUser,jdbcType=VARCHAR},
+      </if>
+      <if test="evaluationContent != null" >
+        #{evaluationContent,jdbcType=VARCHAR},
+      </if>
+      <if test="evaluationTime != null" >
+        #{evaluationTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="parentId != null" >
+        #{parentId,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null" >
+        #{updateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="delFlag != null" >
+        #{delFlag,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.recon.community.entity.NewsEvaluation" >
+    update housekeeping_news_evaluation
+    <set >
+      <if test="newsId != null" >
+        news_id = #{newsId,jdbcType=VARCHAR},
+      </if>
+      <if test="evaluationUser != null" >
+        evaluation_user = #{evaluationUser,jdbcType=VARCHAR},
+      </if>
+      <if test="evaluationContent != null" >
+        evaluation_content = #{evaluationContent,jdbcType=VARCHAR},
+      </if>
+      <if test="evaluationTime != null" >
+        evaluation_time = #{evaluationTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="parentId != null" >
+        parent_id = #{parentId,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null" >
+        update_user = #{updateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="delFlag != null" >
+        del_flag = #{delFlag,jdbcType=CHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.recon.community.entity.NewsEvaluation" >
+    update housekeeping_news_evaluation
+    set news_id = #{newsId,jdbcType=VARCHAR},
+      evaluation_user = #{evaluationUser,jdbcType=VARCHAR},
+      evaluation_content = #{evaluationContent,jdbcType=VARCHAR},
+      evaluation_time = #{evaluationTime,jdbcType=TIMESTAMP},
+      parent_id = #{parentId,jdbcType=VARCHAR},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      update_user = #{updateUser,jdbcType=VARCHAR},
+      del_flag = #{delFlag,jdbcType=CHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>
